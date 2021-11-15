@@ -4,11 +4,12 @@ function Home() {
       <div className="banner">&nbsp;</div>
       <div id="content">
         <div className="content">
+        
           <ul>
             <li>
               {" "}
               <a href="#">
-                <img src="images/puppy.jpg" width="114" height="160" alt="" />
+                <img src="images/pexelsphoto20233841.jpeg" width="114" height="160" alt="" />
               </a>
               <h2>What they need</h2>
               <p>
@@ -36,9 +37,9 @@ function Home() {
             <li>
               {" "}
               <a href="#">
-                <img src="images/koi.jpg" width="114" height="160" alt="" />
+                <img src="images/pexelsphoto236640.jpeg" width="114" height="160" alt="" />
               </a>
-              <h2>Kinds of Fish</h2>
+              <h2>Kinds of Rabbits</h2>
               <p>
                 Quam nunc putamus parum claram, antep osuerit litter arum formas
                 humanitatis per seacula quarta.{" "}
@@ -64,18 +65,7 @@ function Home() {
           </ul>
         </div>
         <div id="sidebar">
-          <div className="search">
-            <input type="text" name="s" />
-            <button>&nbsp;</button>
-            <label htmlFor="articles">
-              <input type="radio" id="articles" />
-              Articles
-            </label>
-            <label htmlFor="products">
-              <input type="radio" id="products" />
-              PetMart Products
-            </label>
-          </div>
+         
           <div className="section">
             <ul className="navigation">
               <li className="active">
