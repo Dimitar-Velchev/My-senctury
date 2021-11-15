@@ -12,7 +12,7 @@ function PetCategory({pet}) {
       <h2>{pet.title}</h2>
       <p>
        {pet.text}
-      <a class="more" href="#">View all</a>
+      <a className="more" href="#">View all</a>
       </p>
     </li>
   );

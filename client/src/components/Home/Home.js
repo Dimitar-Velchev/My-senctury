@@ -4,11 +4,13 @@ import { useState } from "react";
 function Home() {
   let [pets, setPet] = useState([
     {
+      id: 0,
       src: "images/pexelsphoto20233841.jpeg",
       title: "Dog",
       text: "Mirum est notare quam littera gothica, quam nunc putamus parum clara",
     },
     {
+      id: 1,
       src: "images/cat.jpg",
       title: "Cat",
       text: "Mirum est notare quam littera gothica, quam nunc putamus parum clara",
@@ -22,7 +24,7 @@ function Home() {
         <div className="content">
           <ul>
             {pets.map((pet) => (
-              <PetCategory pet={pet} />
+              <PetCategory key = {pet.id} pet={pet} />
             ))}
           </ul>
         </div>
