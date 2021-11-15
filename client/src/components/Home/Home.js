@@ -1,24 +1,33 @@
 import PetCategory from "./PetCategory";
-import {useState} from  'react';
+import { useState } from "react";
 
 function Home() {
- 
-  let [pet, setPet] = useState([{}]);
+  let [pets, setPet] = useState([
+    {
+      src: "images/pexelsphoto20233841.jpeg",
+      title: "Dog",
+      text: "Mirum est notare quam littera gothica, quam nunc putamus parum clara",
+    },
+    {
+      src: "images/cat.jpg",
+      title: "Cat",
+      text: "Mirum est notare quam littera gothica, quam nunc putamus parum clara",
+    },
+  ]);
 
   return (
     <div id="body">
       <div className="banner">&nbsp;</div>
       <div id="content">
         <div className="content">
-        
           <ul>
-           <PetCategory />
-            
+            {pets.map((pet) => (
+              <PetCategory pet={pet} />
+            ))}
           </ul>
         </div>
-        
+
         <div id="sidebar">
-         
           <div className="section">
             <ul className="navigation">
               <li className="active">

@@ -1,18 +1,17 @@
-function PetCategory(props) {
+function PetCategory({pet}) {
   return (
     <li>
       <a href='#'>
         <img
-          src="images/pexelsphoto20233841.jpeg"
+          src={pet.src}
           width="114"
           height="160"
           alt=""
         />
       </a>
-      <h2>What they need</h2>
+      <h2>{pet.title}</h2>
       <p>
-        Mirum est notare quam littera gothica, quam nunc putamus parum clara m,
-        ant epo suerit li tterar.
+       {pet.text}
       <a class="more" href="#">View all</a>
       </p>
     </li>
