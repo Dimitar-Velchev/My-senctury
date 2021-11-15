@@ -1,12 +1,12 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import HomePage from "./components/HomePage";
+import Home from "./components/Home";
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <HomePage/>
+      <Home/>
       <Footer/>
     </div>
   );

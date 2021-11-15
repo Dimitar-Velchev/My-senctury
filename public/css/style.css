@@ -4,8 +4,7 @@ body {
 	background: url("../images/bg-body.gif");
 	background-repeat:repeat-x;
 }
-#page {
-}
+
 #header {
 	width:960px;
 	height:72px;
@@ -155,7 +154,7 @@ body {
 }
 /**--------- Start of Blog Page Style **/	
     #body #content .content ul.articles {
-	list-tyle-type:none;
+	list-style-type:none;
 	margin:80px 25px 0 0;
 	padding:0;
 	background-image:none;
@@ -702,7 +701,6 @@ body {
 	/*
 	  _width:200px;
 	  */
-	  float:left;
 }
 #body #content #sidebar .section .aside div div ul li a:hover {
 	color:#e4a217;

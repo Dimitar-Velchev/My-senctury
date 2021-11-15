@@ -1,4 +1,4 @@
-function HomePage () {
+function Home () {
     return (
 <div id="body">
   <div className="banner">&nbsp;</div>
@@ -58,15 +58,15 @@ function HomePage () {
       </div>
     </div>
   </div>
-  <div className="featured">
+  <div class="featured">
     <ul>
       <li><a href="#"><img src="images/organic-and-chemical-free.jpg" width="300" height="90" alt=""/></a></li>
       <li><a href="#"><img src="images/good-food.jpg" width="300" height="90" alt=""/></a></li>
-      <li className="last"><a href="#"><img src="images/pet-grooming.jpg" width="300" height="90" alt=""/></a></li>
+      <li class="last"><a href="#"><img src="images/pet-grooming.jpg" width="300" height="90" alt=""/></a></li>
     </ul>
   </div>
 </div>
 );
 }
 
-export default HomePage
+export default Home
