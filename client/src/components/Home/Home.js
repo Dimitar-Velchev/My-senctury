@@ -1,4 +1,10 @@
+import PetCategory from "./PetCategory";
+import {useState} from  'react';
+
 function Home() {
+ 
+  let [pet, setPet] = useState([{}]);
+
   return (
     <div id="body">
       <div className="banner">&nbsp;</div>
@@ -6,64 +12,11 @@ function Home() {
         <div className="content">
         
           <ul>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="images/pexelsphoto20233841.jpeg" width="114" height="160" alt="" />
-              </a>
-              <h2>What they need</h2>
-              <p>
-                Mirum est notare quam littera gothica, quam nunc putamus parum
-                clara m, ant epo suerit li tterar.{" "}
-                <a className="more" href="#">
-                  View all
-                </a>
-              </p>
-            </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="images/cat.jpg" width="114" height="160" alt="" />
-              </a>
-              <h2>Something good</h2>
-              <p>
-                Gothica, quam nun c putamus parum claram, anteposuerit
-                litterarum formas humani tatis per seacula.{" "}
-                <a className="more" href="#">
-                  View all
-                </a>
-              </p>
-            </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="images/pexelsphoto236640.jpeg" width="114" height="160" alt="" />
-              </a>
-              <h2>Kinds of Rabbits</h2>
-              <p>
-                Quam nunc putamus parum claram, antep osuerit litter arum formas
-                humanitatis per seacula quarta.{" "}
-                <a className="more" href="#">
-                  View all
-                </a>
-              </p>
-            </li>
-            <li>
-              {" "}
-              <a href="#">
-                <img src="images/bird.jpg" width="114" height="160" alt="" />
-              </a>
-              <h2>Fun birds</h2>
-              <p>
-                Mirum est notare quam littera gothica , quam nunc putamus parum
-                claram, anteposuerit.{" "}
-                <a className="more" href="#">
-                  View all
-                </a>
-              </p>
-            </li>
+           <PetCategory />
+            
           </ul>
         </div>
+        
         <div id="sidebar">
          
           <div className="section">
