@@ -25,13 +25,13 @@ function Home () {
     </div>
     <div id="sidebar">
       <div className="search">
-        <input type="text" name="s" value="Find"/>
+        <input type="text" name="s" />
         <button>&nbsp;</button>
-        <label for="articles">
+        <label htmlFor="articles">
           <input type="radio" id="articles"/>
           Articles</label>
-        <label for="products">
-          <input type="radio" id="products" checked/>
+        <label htmlFor="products">
+          <input type="radio" id="products" />
           PetMart Products</label>
       </div>
       <div className="section">
@@ -58,11 +58,11 @@ function Home () {
       </div>
     </div>
   </div>
-  <div class="featured">
+  <div className="featured">
     <ul>
       <li><a href="#"><img src="images/organic-and-chemical-free.jpg" width="300" height="90" alt=""/></a></li>
       <li><a href="#"><img src="images/good-food.jpg" width="300" height="90" alt=""/></a></li>
-      <li class="last"><a href="#"><img src="images/pet-grooming.jpg" width="300" height="90" alt=""/></a></li>
+      <li className="last"><a href="#"><img src="images/pet-grooming.jpg" width="300" height="90" alt=""/></a></li>
     </ul>
   </div>
 </div>

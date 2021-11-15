@@ -3,7 +3,7 @@ function Footer() {
 
   <div id="footer">
     <div id="footnote">
-      <div class="section">
+      <div className="section">
         Copyright &copy; 2012 <a href="#">Company Name</a> All rights reserved |
         Website Template By{" "}
         <a target="_blank" href="http://www.freewebsitetemplates.com/">
