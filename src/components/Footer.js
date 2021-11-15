@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <div id="footer">
-      <div class="featured">
+      <div className="featured">
         <ul>
           <li>
             <a href="#">
@@ -18,7 +18,7 @@ function Footer() {
               <img src="images/good-food.jpg" width="300" height="90" alt="" />
             </a>
           </li>
-          <li class="last">
+          <li className="last">
             <a href="#">
               <img
                 src="images/pet-grooming.jpg"
@@ -31,7 +31,7 @@ function Footer() {
         </ul>
       </div>
       <div id="footnote">
-        <div class="section">
+        <div className="section">
           Copyright &copy; 2012 <a href="#">Company Name</a> All rights reserved
           | Website Template By{" "}
           <a target="_blank" href="http://www.freewebsitetemplates.com/">
