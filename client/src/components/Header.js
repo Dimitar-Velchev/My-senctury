@@ -1,6 +1,6 @@
 function Header (){
 return (
-<div id="header"> <a href="#" id="logo"><img src="images/logo.gif" width="310" height="114" alt=""/></a>
+<div id="header"> <a href="#" id="logo"><img src="images/new-logo.png" width="310" height="120" alt=""/></a>
     <ul className="navigation">
       <li className="active"><a href="index.html">Home</a></li>
       <li><a href="petmart.html">Catalog</a></li>

@@ -13,16 +13,17 @@ body {
 }
 #header a#logo {
   position: relative;
-  z-index: 100;
 }
 #header a#logo img {
   border: 0;
+  height: 72px;
+  width: 250px;
 }
 /**-------------- Navigation style ---------------**/
 #header ul.navigation {
   list-style-type: none;
-  margin: -82px 0 0 300px;
-  padding: 0;
+  margin: -82px 0 0 250px;
+  padding-top: 50px;
   overflow: hidden;
 }
 #header ul.navigation li {
@@ -46,7 +47,7 @@ body {
   background: url("../images/menu-separator.gif");
   background-repeat: no-repeat;
   background-position: right;
-  height: 35px;
+  height: 55px;
   padding: 0 20px 0 20px;
   text-align: center;
   width: 67px;
@@ -57,10 +58,24 @@ body {
 /**------------- Start of body style ----------------**/
 
 #body div.banner {
-  background: url("../images/dog.jpg");
-  background-position: center;
+  background: url("../images/jumbotron.jpg");
   background-repeat: no-repeat;
-  height: 606px;
+  min-height: 800px;
+  background-position: center;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: center;
+  background-size:cover;
+}
+#body div span {
+  font-family: "Myriad Pro";
+  font-size: 25px;
+  color: #5a5555;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform:uppercase
 }
 #body div#content {
   width: 960px;
@@ -88,7 +103,7 @@ body {
   list-style-type: none;
 }
 #body #content .content ul li {
-  width: 300px;
+  width: 500px;
   padding: 0 10px;
   margin: 0 0 20px 0;
   float: left;
