@@ -14,7 +14,7 @@ module.exports = (app) => {
       reject(err);
     });
     db.once("open", function () {
-      console.log("DB ready");
+      console.log("Database on");
       resolve();
     });
   });

@@ -3,7 +3,7 @@ const { parseError } = require("../middlewares/util");
 const { isUser, isOwner } = require("../middlewares/guards");
 const preloader = require("../middlewares/preloader");
 const { getAll, create, update, remove, book, postReview, getReviews } = require("../services/listing");
-const Listing = require("../models/Listing");
+const Listing = require("../models/Pet");
 
 router.get("/", async (req, res) => {
   const data = await getAll();
@@ -11,18 +11,18 @@ router.get("/", async (req, res) => {
   res.json(data);
 });
 
-router.post("/", isUser(), async (req, res) => {
+router.post("/",  async (req, res) => {  //isUser(),
   const data = {
-    title: req.body.title,
-    location: req.body.location,
+    name: req.body.name,
+    age: Number(req.body.age),
+    sex: req.body.sex,
     img: req.body.img,
-    price: Number(req.body.price),
-    category: req.body.category,
-    description: req.body.description,
-    owner: req.user._id,
+    // category: req.body.category,
+    // description: req.body.description,
+    // owner: req.user._id,
   };
   try {
-    const result = await create(data, req.user._id);
+    const result = await create(data); //, req.user._id
 
     res.status(201).json(result);
   } catch (err) {
@@ -32,6 +32,7 @@ router.post("/", isUser(), async (req, res) => {
     res.status(400).json({ message });
   }
 });
+
 
 router.get("/:id", preloader(), async (req, res) => {
   const item = req.data.toObject();

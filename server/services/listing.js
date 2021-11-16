@@ -1,23 +1,24 @@
-const Listing = require("../models/Listing");
+const Pet = require("../models/Pet");
 const User = require("../models/User");
 const Review = require("../models/Review");
 
 async function getAll() {
-  const listings = Listing.find().sort({price: -1}).lean();
+  const pets = Pet.find();
+  //const listings = Listing.find().sort({price: -1}).lean();
 
-  return listings;
+  return pets;
 }
 
 async function getById(id) {
   return Listing.findById(id).populate('reviews');
 }
 
-async function create(data, userId) {
-  const user = await User.findById(userId);
-  const result = new Listing(data);
+async function create(data) {
+  //const user = await User.findById(userId);
+  const result = new Pet(data);
   await result.save();
-  user.offered.push(result);
-  await user.save();
+  //user.offered.push(result);
+  //await user.save();
   return result;
 }
 
