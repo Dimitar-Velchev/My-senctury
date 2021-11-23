@@ -28,14 +28,10 @@ body {
 }
 #header ul.navigation li {
   float: left;
-  height: 35px;
+  height: 25px;
   width: 107px;
 }
-#header ul.navigation li.active {
-  background: url("../images/menu.gif");
-  background-repeat: no-repeat;
-  background-position: 0 -160px;
-}
+
 #header ul.navigation li a {
   text-decoration: none;
   color: #2c1d00;
@@ -44,7 +40,6 @@ body {
   font-weight: bold;
   display: inline-block;
   line-height: 35px;
-  background: url("../images/menu-separator.gif");
   background-repeat: no-repeat;
   background-position: right;
   height: 55px;
