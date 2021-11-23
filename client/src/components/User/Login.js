@@ -1,15 +1,20 @@
-import {Row, Col} from 'react-bootstrap';
+import { Row, Col, Container } from "react-bootstrap";
 
 import ImageBackground from "./ImageBackground";
 import LoginForm from "./LoginForm";
 
-
 function Login() {
   return (
-    <Row className="container" style={{minHeight:"70vh"}}>
-      <Col><ImageBackground /></Col>
-      <Col><LoginForm /></Col>
-    </Row>
+    <Container fluid="md" style={{ minHeight: "80vh" }}>
+      <Row>
+        <Col>
+          <LoginForm />
+        </Col>
+        <Col>
+          <ImageBackground />
+        </Col>
+      </Row>
+    </Container>
   );
 }
 

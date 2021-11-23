@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 function RegisterForm() {
   return (
     <div>
-      <Form style={{width:"80%", marginTop:"10%", marginLeft:"10%"}}>
+      <Form style={{width:"80%", margin:"30% 10% 30% 20%"}}>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Username</Form.Label>
           <Form.Control type="text" placeholder="Enter username" />
