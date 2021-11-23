@@ -1,7 +1,13 @@
-function Catalog (){
-    return (
-        <h1> Catolog </h1>
-    )
+function Catalog() {
+  return (
+    <div id="body">
+      <div className="content">
+        <ul>
+        
+        </ul>
+      </div>
+    </div>
+  );
 }
 
-export default Catalog
+export default Catalog;
