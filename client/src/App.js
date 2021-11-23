@@ -7,7 +7,7 @@ import MyPets from "./components/MyPets/MyPets";
 import Login from "./components/User/Login";
 import Register from "./components/User/Register";
 
-import { Route, NavLink, Switch } from "react-router-dom";
+import { Route,Switch } from "react-router-dom";
 
 function App() {
   return (
@@ -20,7 +20,6 @@ function App() {
         <Route path="/register"   component={Register} />
         <Route path="/mypets"   component={MyPets} />
         <Route path="/create"   component={Create} />
-
       </Switch>
       <Footer />
     </div>
