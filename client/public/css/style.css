@@ -117,33 +117,21 @@ body {
 #body #content .content ul li span a:hover {
   color: #000000;
 }
-#body #content .content ul li span a.more {
-  text-decoration: none;
-  color: #ffad00;
-}
-#body #content .content ul li span a.more:hover {
-  text-decoration: none;
-  color: #ff6600;
-}
+
 #body #content .content ul li a {
   text-decoration: none;
 }
 #body #content .content ul li a:hover {
   color: #f8f3e9;
 }
-#body #content .content ul li a.more {
-  text-decoration: none;
-  color: #ffad00;
-}
-#body #content .content ul li a.more:hover {
-  text-decoration: none;
-  color: #ff6600;
-}
+
+
 #body #content .content ul li h2 {
   font-family: "Myriad Pro";
   font-size: 20px;
   margin: 0;
 }
+
 #body #content .content ul li p {
   font-family: "Myriad Pro";
   font-size: 14px;

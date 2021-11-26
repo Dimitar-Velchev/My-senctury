@@ -32,11 +32,7 @@ function Footer() {
       </div>
       <div id="footnote">
         <div className="section">
-          Copyright &copy; 2012 <a href="#">Company Name</a> All rights reserved
-          | Website Template By{" "}
-          <a target="_blank" href="http://www.freewebsitetemplates.com/">
-            freewebsitetemplates.com
-          </a>
+          Copyright &copy; 2021 <a href="#">My Sanctuary</a> All rights reserved
         </div>
       </div>
     </div>
