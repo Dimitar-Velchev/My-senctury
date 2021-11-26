@@ -15,10 +15,10 @@ router.post("/",  async (req, res) => {  //isUser(),
   const data = {
     name: req.body.name,
     age: Number(req.body.age),
-    sex: req.body.sex,
+    gender: req.body.gender,
     img: req.body.img,
-    // category: req.body.category,
-    // description: req.body.description,
+    category: req.body.category,
+    description: req.body.description,
     // owner: req.user._id,
   };
   try {
