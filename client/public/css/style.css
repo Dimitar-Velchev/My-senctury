@@ -50,7 +50,6 @@ body {
 #header ul.navigation li a:hover {
   color: #ffffff;
 }
-/**------------- Start of body style ----------------**/
 
 #body div.banner {
   background: url("../images/jumbotron.jpg");
@@ -814,75 +813,7 @@ body {
 #body #content #sidebar .featured ul li p a.more:hover {
   color: #7f7154;
 }
-/**---------------- Start of sidebar connect style ------------------**/
 
-#body #content #sidebar .connect {
-  width: 300px;
-}
-#body #content #sidebar .connect h2 {
-  color: #ff9e01;
-  font-family: "Myriad Pro";
-  font-size: 28px;
-  font-style: Italic;
-  margin: 80px 0 0 0;
-  padding: 0;
-  font-weight: normal;
-}
-#body #content #sidebar .connect ul {
-  margin: 0;
-  list-style-type: none;
-}
-#body #content #sidebar .connect ul li {
-  clear: both;
-  height: 70px;
-  background: url("../images/top-border-short.gif");
-  background-repeat: no-repeat;
-  background-position: 10px bottom;
-}
-#body #content #sidebar .connect ul li a {
-  text-decoration: none;
-  display: block;
-  line-height: 70px;
-  padding-left: 70px;
-  color: #93898a;
-}
-#body #content #sidebar .connect ul li a.facebook {
-  background: url("../images/icons.gif");
-  background-position: 0 -174px;
-  background-repeat: no-repeat;
-}
-#body #content #sidebar .connect ul li a.facebook:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-#body #content #sidebar .connect ul li a.subscribe {
-  background: url("../images/icons.gif");
-  background-position: 0 -428px;
-  background-repeat: no-repeat;
-}
-#body #content #sidebar .connect ul li a.subscribe:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-#body #content #sidebar .connect ul li a.twitter {
-  background: url("../images/icons.gif");
-  background-repeat: no-repeat;
-  background-position: 0 -588px;
-}
-#body #content #sidebar .connect ul li a.twitter:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-#body #content #sidebar .connect ul li a.flicker {
-  background: url("../images/icons.gif");
-  background-repeat: no-repeat;
-  background-position: 0 -268px;
-}
-#body #content #sidebar .connect ul li a.flicker:hover {
-  opacity: 0.8;
-  filter: alpha(opacity=80);
-}
-/**------------------------ End of sidebar style  ----------------------**/
 
 /**----------- Start of featured Style -------------**/
 #footer .featured {
