@@ -2,7 +2,7 @@ import {Card, Button, Image} from 'react-bootstrap';
 
 function PetCard() {
     return (
-        <Card style={{ width: '18rem' }}>
+        <Card style={{ width: '22rem' }}>
         <Card.Img variant="top" src="./images/reg-form-puppy.jpg" />
         <Card.Body>
           <Card.Title>Lucky</Card.Title> 
