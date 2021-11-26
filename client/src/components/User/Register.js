@@ -2,6 +2,7 @@ import { Row, Col, Container } from "react-bootstrap";
 
 import ImageBackground from "./ImageBackground";
 import RegisterForm from "./RegisterForm";
+import './User.css';
 
 function Register() {
   return (

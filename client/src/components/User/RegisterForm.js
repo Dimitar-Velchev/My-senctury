@@ -2,8 +2,10 @@ import { Form, Button } from "react-bootstrap";
 
 function RegisterForm() {
   return (
-    <div>
+    <div className="wrapper">
       <Form style={{width:"80%", margin:"30% 10% 30% 20%"}}>
+       <img src="./images/user-icon.png" alt="user-icon" className="user-icon" />
+
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Username</Form.Label>
           <Form.Control type="text" placeholder="Enter username" />
