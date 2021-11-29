@@ -2,8 +2,8 @@ import {Card, Button, Image} from 'react-bootstrap';
 
 function PetCard() {
     return (
-        <Card style={{ width: '22rem' }}>
-        <Card.Img variant="top" src="./images/reg-form-puppy.jpg" />
+        <Card style={{ minWidth: '18rem'}}>
+        <Card.Img variant="top" src="./images/bunny.jfif" />
         <Card.Body>
           <Card.Title>Lucky</Card.Title> 
           <Card.Text>
@@ -11,7 +11,7 @@ function PetCard() {
             Age: 3 <br />
             <Image src="./images/gender-icon.svg" roundedCircle /> Gender: Male
           </Card.Text>
-          <Button variant="warning">Learn more about...</Button>
+          <Button variant="warning">Learn more about me</Button>
         </Card.Body>
       </Card>
     );

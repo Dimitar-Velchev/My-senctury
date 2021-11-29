@@ -4,11 +4,17 @@ import './Catalog.css';
 function Catalog() {
   return (
     <div id="body">
-      <div className="catalog-content">
-        <ul className="pet-list">
+        <ul className="pet-list" >
+        <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
         <PetCard />
         </ul>
-      </div>
     </div>
   );
 }
