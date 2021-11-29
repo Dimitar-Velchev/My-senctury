@@ -2,7 +2,7 @@ import {Card, Button, Image} from 'react-bootstrap';
 
 function PetCard() {
     return (
-        <Card style={{ minWidth: '18rem'}}>
+        <Card>
         <Card.Img variant="top" src="./images/bunny.jfif" />
         <Card.Body>
           <Card.Title>Lucky</Card.Title> 

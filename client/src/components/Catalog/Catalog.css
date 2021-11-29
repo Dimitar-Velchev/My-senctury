@@ -10,9 +10,13 @@
 }
 .card{
     min-height: 30vh;
-    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
-    border-radius: 1rem;
-    
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;   
+}
+
+.card:hover{
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+
 }
 
 .card-img-top{
