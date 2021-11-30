@@ -1,0 +1,67 @@
+[
+  {
+    "name": "Lola",
+    "age": "2",
+    "gender": "female",
+    "img": "https://cdn.pixabay.com/photo/2017/07/25/01/22/cat-2536662_960_720.jpg",
+    "category": "cat",
+    "description": "Lola is yound and likes to play outside. She is not picky about her food and about other pets.",
+    "neutered": "false"
+  },
+  {
+    "name": "Ozzy",
+    "age": "4",
+    "gender": "male",
+    "img": "https://image.shutterstock.com/image-photo/dog-600w-587562362.jpg",
+    "category": "dog",
+    "description": "Handsome Ozzy is ready to be the most loving companion to his new family, so come meet him today and take him home!",
+    "neutered": "true"
+  },
+  {
+    "name": "Bambi",
+    "age": "3",
+    "gender": "female",
+    "img": "https://image.shutterstock.com/image-photo/cute-wide-eyed-chihuahua-on-600w-1499844653.jpg",
+    "category": "dog",
+    "description": "This sweet girl loves to run around our play yards to give her long legs a good stretch, but she won't forget to stop and give some kisses to whoever is with her.",
+    "neutered": "true"
+  },
+  {
+    "name": "Leo",
+    "age": "2",
+    "gender": "male",
+    "img": "https://image.shutterstock.com/image-photo/funny-portrait-happy-smiling-ginger-600w-1154676640.jpg",
+    "category": "cat",
+    "description": "My name is Leo and I am a neutered male, black Domestic Shorthair. The shelter thinks I am about 2 years and 6 months old.",
+    "neutered": "false"
+  },
+  {
+    "name": "Fiona",
+    "age": "6",
+    "gender": "female",
+    "img": "https://image.shutterstock.com/image-photo/well-fed-fat-cat-sitting-600w-1654690375.jpg",
+    "category": "cat",
+    "description": "Fiona is a sweet but shy girl who will need some extra time to adjust. We promise she is worth the wait!",
+    "neutered": "true"
+
+  },
+  {
+    "name": "Duke",
+    "age": "5",
+    "gender": "male",
+    "img": "https://image.shutterstock.com/image-photo/red-pit-bull-terrier-mixed-600w-1931102123.jpg",
+    "category": "dog",
+    "description": "I am shy little but once I trust you, I'll be your best buddy!",
+    "neutered": "true"
+
+  },
+  {
+    "name": "Molly",
+    "age": "3",
+    "gender": "female",
+    "img": "https://image.shutterstock.com/image-photo/zenith-black-cat-on-white-600w-1711242190.jpg",
+    "category": "cat",
+    "description": "Molly has been spayed, microchipped, vaccinated, vet checked and is up to date with her flea and worming treatments.",
+    "neutered": "true"
+  }
+]
