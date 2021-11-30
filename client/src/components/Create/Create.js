@@ -5,7 +5,7 @@ function Create() {
   return (
           <div className="create-form">
             <Form>
-              <h1>Add A Pet Form</h1>
+              <h1>ADD A PET FORM</h1>
               <br />
               <Form.Group className="mb-3">
                 <Form.Control type="text" placeholder="Enter pet name" />
