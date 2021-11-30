@@ -3,7 +3,7 @@ import './Catalog.css';
 
 function Catalog() {
   return (
-    <div id="body">
+    <div id="catalog-body">
         <ul className="pet-list" >
         <PetCard />
         <PetCard />
@@ -11,9 +11,7 @@ function Catalog() {
         <PetCard />
         <PetCard />
         <PetCard />
-        <PetCard />
-        <PetCard />
-        <PetCard />
+    
          </ul>
     </div>
   );

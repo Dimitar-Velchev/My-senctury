@@ -1,11 +1,8 @@
-import { Row, Col, Container, Form, Button } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import "./Create.css";
 
 function Create() {
   return (
-    <Container fluid="md" className="create-container">
-      <Row>
-        <Col>
           <div className="create-form">
             <Form>
               <h1>Add A Pet Form</h1>
@@ -42,15 +39,17 @@ function Create() {
                 <option value="2">Dog</option>
               </Form.Select>
               <br />
+
+              <Form.Group className="mb-3">
+                <Form.Check type="checkbox" label="Check if the pet is neutered/sprayed." />
+              </Form.Group>
           
               <Button variant="warning" type="submit">
                 ADD A PET FOR ADOPTION
               </Button>
             </Form>
           </div>
-        </Col>
-      </Row>
-    </Container>
+  
   );
 }
 

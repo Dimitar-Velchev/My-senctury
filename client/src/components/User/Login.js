@@ -6,7 +6,7 @@ import "./User.css";
 
 function Login() {
   return (
-    <Container fluid="md" style={{ minHeight: "80vh" }}>
+    <Container fluid="md" style={{ minHeight: "90vh" }}>
       <Row>
         <Col>
           <LoginForm />

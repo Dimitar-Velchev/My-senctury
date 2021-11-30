@@ -1,24 +1,18 @@
-.create-container {
+.create-form {
   min-height: 80vh;
-}
-.create-form{
-    height: auto;
-    width: 28rem;
-    border-radius: 2px;
-    box-shadow: 5px 9px 13px 6px rgba(255,146,85,0.46);
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 25rem;
+  border-radius: 2px;
+  box-shadow: 5px 9px 13px 6px rgba(255, 146, 85, 0.46);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.create-form h1{
-    font-size: medium;
-    color:rgb(187, 145, 77);
-    text-align: center;
+.create-form h1 {
+  font-size: medium;
+  color: rgb(187, 145, 77);
+  text-align: center;
 }

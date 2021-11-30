@@ -3,7 +3,7 @@ const { parseError } = require("../middlewares/util");
 const { isUser, isOwner } = require("../middlewares/guards");
 const preloader = require("../middlewares/preloader");
 const { getAll, create, update, remove, book, postReview, getReviews } = require("../services/listing");
-const Listing = require("../models/Pet");
+const Pet = require("../models/Pet");
 
 router.get("/", async (req, res) => {
   const data = await getAll();
@@ -19,6 +19,7 @@ router.post("/",  async (req, res) => {  //isUser(),
     img: req.body.img,
     category: req.body.category,
     description: req.body.description,
+    neutered: Boolean(req.body.neutered)
     // owner: req.user._id,
   };
   try {

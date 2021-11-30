@@ -1,6 +1,8 @@
-
-.pet-list{
+#catalog-body{
     min-height: 80vh;
+
+}
+.pet-list{
     margin-top: 5rem;
     margin-right:2rem;
     display: grid;
