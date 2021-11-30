@@ -11,6 +11,7 @@ const schema = new Schema({
     required: [true, "Category is required"],
     enum: ["dog", "cat"],
   },
+  neutered: {type:Boolean, required: true },
   owner: { type: Schema.Types.ObjectId, ref: "User" },
   // reviews: [{type: Schema.Types.ObjectId, ref: "Review" }]
 });

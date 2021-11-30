@@ -1,4 +1,5 @@
 import {Card, Button, Image} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 
 function PetCard() {
     return (
@@ -11,7 +12,9 @@ function PetCard() {
             Age: 3 <br />
             <Image src="./images/gender-icon.svg" roundedCircle /> Gender: Male
           </Card.Text>
+          <Link to={`/catalog/details/:id`}>
           <Button variant="warning">Learn more about me</Button>
+          </Link>
         </Card.Body>
       </Card>
     );

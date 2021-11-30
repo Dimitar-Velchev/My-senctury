@@ -6,6 +6,7 @@ import Create from "./components/Create/Create";
 import MyPets from "./components/MyPets/MyPets";
 import Login from "./components/User/Login";
 import Register from "./components/User/Register";
+import PetDetails from "./components/Details/PetDetails";
 import NotFound from "./components/NotFound/NotFound";
 
 import { Route,Switch } from "react-router-dom";
@@ -16,7 +17,8 @@ function App() {
       <Header />
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/catalog"   component={Catalog} />
+        <Route path="/catalog" exact  component={Catalog} />
+        <Route path="/catalog/details/:petId"   component={PetDetails} />
         <Route path="/login"   component={Login} />
         <Route path="/register"   component={Register} />
         <Route path="/mypets"   component={MyPets} />

@@ -14,7 +14,7 @@ function Catalog() {
         <PetCard />
         <PetCard />
         <PetCard />
-        </ul>
+         </ul>
     </div>
   );
 }

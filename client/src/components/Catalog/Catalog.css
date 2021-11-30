@@ -25,3 +25,7 @@
     object-fit: cover;
  
 }
+
+.div.card-body{
+    max-height: 30vh;
+}
