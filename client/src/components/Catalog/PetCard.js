@@ -1,16 +1,16 @@
 import { Card, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-function PetCard() {
+function PetCard({pet}) {
   return (
     <Card>
-      <Card.Img variant="top" src="./images/bunny.jfif" />
+      <Card.Img variant="top" src={pet.img} />
       <Card.Body>
-        <Card.Title>Lucky</Card.Title>
+        <Card.Title>{pet.name}</Card.Title>
         <Card.Text>
           <Image src="./images/hourglass-icon.svg" roundedCircle />
-          Age: 3 <br />
-          <Image src="./images/gender-icon.svg" roundedCircle /> Gender: Male
+          Age:{pet.age} <br />
+          <Image src="./images/gender-icon.svg" roundedCircle /> Gender:{pet.gender}
         </Card.Text>
         <Link to={`/catalog/details/:id`}>
           <Button variant="warning">Learn more about me</Button>
