@@ -11,6 +11,10 @@ function Catalog() {
         <PetCard />
         <PetCard />
         <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
+        <PetCard />
     
          </ul>
     </div>
