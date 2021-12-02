@@ -12,7 +12,6 @@ function Catalog() {
     const data = await fetch(url);
     const result = await data.json()
     setPets(result)
-    console.log(result);
   },[]);
 
 
