@@ -3,9 +3,9 @@ import { Spinner } from "react-bootstrap";
 
 
 import PetCard from "./PetCard";
+import {getAll} from '../../services/petService';
 import "./Catalog.css";
 
-const URL = "http://localhost:5000/data/catalog";
 
 function Catalog() {
   const [pets, setPets] = useState([]);
@@ -14,9 +14,8 @@ function Catalog() {
 
   useEffect(async () => {
     setLoading(true);
-    const data = await fetch(URL);
-    const result = await data.json()
-    setPets([result]);
+    let result = await getAll();
+    setPets(result);
     setLoading(false);
   },[]);
 
@@ -31,6 +30,7 @@ function Catalog() {
         ? pets.map(pet=><PetCard key={pet._id} pet={pet}/>)
         : <h2>No pets in catalog yet.</h2>
         }
+
       </ul>
     </div>
   );
