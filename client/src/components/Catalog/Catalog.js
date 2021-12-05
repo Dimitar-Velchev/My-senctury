@@ -16,7 +16,7 @@ function Catalog() {
     setLoading(true);
     const data = await fetch(URL);
     const result = await data.json()
-    setPets(result);
+    setPets([result]);
     setLoading(false);
   },[]);
 
@@ -27,7 +27,9 @@ function Catalog() {
   
         {loading 
         ? <Spinner animation="border" />
-        : pets.map(pet=><PetCard key={pet._id} pet={pet}/>)
+        : pets.length > 0 
+        ? pets.map(pet=><PetCard key={pet._id} pet={pet}/>)
+        : <h2>No pets in catalog yet.</h2>
         }
       </ul>
     </div>
