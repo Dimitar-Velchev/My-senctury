@@ -1,15 +1,16 @@
+import { useState, useEffect } from "react";
+
 import PetCard from "./PetCard";
 import "./Catalog.css";
 
-import { useState, useEffect } from "react";
+const URL = "http://localhost:5000/data/catalog";
 
 function Catalog() {
-  const url = "http://localhost:5000/data/catalog";
-
   const [pets, setPets] = useState([]);
 
+
   useEffect(async () => {
-    const data = await fetch(url);
+    const data = await fetch(URL);
     const result = await data.json()
     setPets(result)
   },[]);
