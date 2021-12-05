@@ -1,30 +1,41 @@
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
+import { useState, useEffect } from "react";
+import {getPetDetails} from '../../services/petService';
+
 import './PetDetails.css';
 
-function Details() {
+function Details({match}) {
+  const [pet, setPet] = useState({});
+
+  useEffect(async () => {
+    let result = await getPetDetails(match.params.petId);
+    setPet(result);
+  },[]);
+
   return (
     <Container style={{ minHeight: "90vh" }}>
       <Row>
         <Col>
-          <Image src="/images/bunny.jfif" thumbnail className="img-left"></Image>
+          <Image src={pet.img} thumbnail className="img-left"></Image>
         </Col>
         <Col>
           <div className="pet-info">
-            <h5>Name: Lucky </h5>
-            <h5>Age: 3</h5>
-            <h5>Gender: Male</h5>
-            <h5>Category: Cat</h5>
+            <h5>Name: {pet.name} </h5>
+            <h5>Age: {pet.age}</h5>
+            <h5>Gender: {pet.gender}</h5>
+            <h5>Category: {pet.category}</h5>
             <h5>
-              My Info:{" "}
+              My Info:
               <p>
-                {" "}
-                Lucky is yound and likes to play outside. She is not picky about
-                her food and about other pets.
+                {pet.description}
               </p>
             </h5>
             <h5>
-              Sprayed/Neutered: <Image src="/images/check-icon.svg" />{" "}
-              <Image src="/images/cancel-icon.svg" />{" "}
+            Sprayed/Neutered: {' '}
+              {pet.neutered 
+              ? <Image src="/images/check-icon.svg" />
+              : <Image src="/images/cancel-icon.svg" />
+              }
             </h5>
             <h5>Owner email: mxb.kativa@gmail.com </h5>
             <Button variant="outline-warning">Ask about me</Button>{" "}

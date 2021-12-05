@@ -10,7 +10,8 @@ async function getAll() {
 }
 
 async function getById(id) {
-  return Listing.findById(id).populate('reviews');
+  return Pet.findById(id);
+  // .populate('reviews');
 }
 
 async function create(data) {

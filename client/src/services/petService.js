@@ -3,9 +3,9 @@ const URL = "http://localhost:5000/data/catalog";
 
 async function getAll(){
     let response = await fetch(URL);
-    let data = await response.json();
+    let result = await response.json();
 
-    return data;
+    return result;
 }
 
 
@@ -22,4 +22,11 @@ let result = await response.json();
 return result; 
 }
 
-export {getAll, createPet}
+async function getPetDetails(id){
+    let response = await fetch(`${URL}/${id}`);
+    let result = await response.json();
+
+    return result;
+}
+
+export {getAll, createPet, getPetDetails}
