@@ -1,22 +1,33 @@
 import { Form, Button } from "react-bootstrap";
 import "./Create.css";
+import { createPet } from "../../services/petService";
 
-function Create() {
+function Create({ history }) {
   function createHandler(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
     let name = formData.get("name");
     let age = formData.get("age");
-    let imgUrl = formData.get("imgUrl");
+    let img = formData.get("img");
     let description = formData.get("description");
     let gender = formData.get("gender");
     let category = formData.get("category");
-    let neutered = formData.get("neutered");
+    let neutered = Boolean(formData.get("neutered"));
 
-    //console.log(name,age,imgUrl,description,gender,category,neutered);
+    createPet({
+      name,
+      age,
+      img,
+      description,
+      gender,
+      category,
+      neutered,
+    });
+    e.currentTarget.reset()
+    history.push("/catalog");
   }
   return (
-    <div classgender="create-form">
+    <div className="create-form">
       <Form method="POST" onSubmit={createHandler}>
         <h1>ADD A PET FORM</h1>
         <br />
@@ -29,7 +40,7 @@ function Create() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Control type="text" placeholder="Enter img URL" name="imgUrl" />
+          <Form.Control type="text" placeholder="Enter img URL" name="img" />
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
