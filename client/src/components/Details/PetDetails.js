@@ -1,16 +1,17 @@
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import {getPetDetails} from '../../services/petService';
+import { getPetDetails } from "../../services/petService";
 
-import './PetDetails.css';
+import "./PetDetails.css";
 
-function Details({match}) {
+function Details({ match }) {
   const [pet, setPet] = useState({});
 
-  useEffect(async () => {
-    let result = await getPetDetails(match.params.petId);
-    setPet(result);
-  },[]);
+  useEffect(() => {
+    getPetDetails(match.params.petId).then((result) => {
+      setPet(result);
+    });
+  }, [match.params.petId]);
 
   return (
     <Container style={{ minHeight: "90vh" }}>
@@ -26,20 +27,19 @@ function Details({match}) {
             <h5>Category: {pet.category}</h5>
             <h5>
               My Info:
-              <p>
-                {pet.description}
-              </p>
+              <p>{pet.description}</p>
             </h5>
             <h5>
-            Sprayed/Neutered: {' '}
-              {pet.neutered 
-              ? <Image src="/images/check-icon.svg" />
-              : <Image src="/images/cancel-icon.svg" />
-              }
+              Sprayed/Neutered:
+              {pet.neutered ? (
+                <Image src="/images/check-icon.svg" />
+              ) : (
+                <Image src="/images/cancel-icon.svg" />
+              )}
             </h5>
             <h5>Owner email: mxb.kativa@gmail.com </h5>
-            <Button variant="outline-warning">Ask about me</Button>{" "}
-            <Button variant="success">Update Info</Button>{" "}
+            <Button variant="outline-warning">Ask about me</Button>
+            <Button variant="success">Update Info</Button>
             <Button variant="danger">Delete Pet</Button>
           </div>
         </Col>

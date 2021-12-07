@@ -2,7 +2,7 @@ import PetCategory from "./PetCategory";
 import { useState } from "react";
 
 function Home() {
-  let [pets, setPet] = useState([
+  let [pets] = useState([
     {
       id: 0,
       src: "images/puppy.jpg",
