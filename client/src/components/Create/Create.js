@@ -22,9 +22,9 @@ function Create({ history }) {
       gender,
       category,
       neutered,
+    }).then(result => {
+      history.push("/catalog");
     });
-    e.currentTarget.reset()
-    history.push("/catalog");
   }
   return (
     <div className="create-form">
