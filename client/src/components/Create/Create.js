@@ -13,6 +13,7 @@ function Create({ history }) {
     let gender = formData.get("gender");
     let category = formData.get("category");
     let neutered = Boolean(formData.get("neutered"));
+    
 
     createPet({
       name,
@@ -25,6 +26,8 @@ function Create({ history }) {
     }).then(result => {
       history.push("/catalog");
     });
+
+    e.currentTarget.reset()
   }
   return (
     <div className="create-form">
