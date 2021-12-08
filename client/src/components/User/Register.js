@@ -4,12 +4,12 @@ import ImageBackground from "./ImageBackground";
 import RegisterForm from "./RegisterForm";
 import './User.css';
 
-function Register() {
+function Register({history}) {
   return (
     <Container fluid="md" style={{ minHeight: "90vh" }}>
       <Row>
         <Col>
-          <RegisterForm />
+          <RegisterForm history={history} />
         </Col>
         <Col>
           <ImageBackground />

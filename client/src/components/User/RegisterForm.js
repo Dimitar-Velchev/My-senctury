@@ -1,19 +1,41 @@
 import { Form, Button } from "react-bootstrap";
+import { register } from "../../services/userService";
 
-function RegisterForm() {
+function RegisterForm({ history }) {
+  function registerHandler(e) {
+    e.preventDefault();
+    let formData = new FormData(e.currentTarget);
+    let username = formData.get("username");
+    let email = formData.get("email");
+    let password = formData.get("password");
+
+    register(username, email, password).then((res) => {
+      console.log(res);
+      history.push("/catalog");
+    });
+  }
+
   return (
     <div className="wrapper">
-      <Form style={{width:"80%", margin:"30% 10% 30% 20%"}}>
-       <img src="./images/user-icon.png" alt="user-icon" className="user-icon" />
+      <Form method="POST" onSubmit={registerHandler}>
+        <img
+          src="./images/user-icon.png"
+          alt="user-icon"
+          className="user-icon"
+        />
 
-        <Form.Group className="mb-3" >
+        <Form.Group className="mb-3">
           <Form.Label>Username</Form.Label>
-          <Form.Control type="text" placeholder="Enter username" />
+          <Form.Control
+            type="text"
+            name="username"
+            placeholder="Enter username"
+          />
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="Enter email" />
+          <Form.Control type="email" name="email" placeholder="Enter email" />
           <Form.Text className="text-muted">
             We'll never share your email with anyone else.
           </Form.Text>
@@ -21,12 +43,22 @@ function RegisterForm() {
 
         <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" autoComplete="off"/>
+          <Form.Control
+            type="password"
+            name="password"
+            placeholder="Password"
+            autoComplete="off"
+          />
         </Form.Group>
-      
-        <Form.Group className="mb-3" >
+
+        <Form.Group className="mb-3">
           <Form.Label>Repeat Password</Form.Label>
-          <Form.Control type="re-pass" placeholder="Repeat Password" autoComplete="off" />
+          <Form.Control
+            type="password"
+            name="re-pass"
+            placeholder="Repeat Password"
+            autoComplete="off"
+          />
         </Form.Group>
 
         <Button variant="warning" type="submit">

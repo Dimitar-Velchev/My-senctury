@@ -3,7 +3,7 @@ import { Form, Button } from "react-bootstrap";
 function LoginForm() {
   return (
     <div className="wrapper">
-      <Form style={{ width: "80%", margin: "30% 10% 30% 20%" }}>
+      <Form>
         <img
           src="./images/user-icon.png"
           alt="user-icon"
