@@ -9,7 +9,7 @@ function Login({history}) {
     <Container fluid="md" style={{ minHeight: "90vh" }}>
       <Row>
         <Col>
-          <LoginForm />
+          <LoginForm history={history} />
         </Col>
         <Col>
           <ImageBackground />
