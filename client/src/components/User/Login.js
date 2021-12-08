@@ -4,7 +4,7 @@ import ImageBackground from "./ImageBackground";
 import LoginForm from "./LoginForm";
 import "./User.css";
 
-function Login() {
+function Login({history}) {
   return (
     <Container fluid="md" style={{ minHeight: "90vh" }}>
       <Row>

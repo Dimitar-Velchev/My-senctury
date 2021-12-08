@@ -1,9 +1,24 @@
 import { Form, Button } from "react-bootstrap";
+import { login } from "../../services/userService";
 
-function LoginForm() {
+
+function LoginForm({history}) {
+
+  function loginHandler(e) {
+    e.preventDefault();
+    let formData = new FormData(e.currentTarget);
+    let email = formData.get("email");
+    let password = formData.get("password");
+
+    login(email, password).then((res) => {
+      console.log(res);
+      history.push("/catalog");
+    });
+  }
+
   return (
     <div className="wrapper">
-      <Form>
+      <Form method="POST" onSubmit={loginHandler} >
         <img
           src="./images/user-icon.png"
           alt="user-icon"

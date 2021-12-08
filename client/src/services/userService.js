@@ -13,6 +13,20 @@ async function register(username, email, password){
     return result; 
 }
 
+async function login(email, password){
+    let response = await fetch(`${URL}/login`, {
+        method: 'POST',
+        headers:{
+            'content-type': 'application/json',
+        },
+        body: JSON.stringify({email, password})
+    });
+    
+    let result = await response.json();
+    return result; 
+}
+
 export{
-    register
+    register,
+    login
 }
