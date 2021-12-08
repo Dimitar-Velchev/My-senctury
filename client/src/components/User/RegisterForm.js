@@ -21,12 +21,12 @@ function RegisterForm() {
 
         <Form.Group className="mb-3">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="password" placeholder="Password" />
+          <Form.Control type="password" placeholder="Password" autoComplete="off"/>
         </Form.Group>
       
         <Form.Group className="mb-3" >
           <Form.Label>Repeat Password</Form.Label>
-          <Form.Control type="re-pass" placeholder="Repeat Password" />
+          <Form.Control type="re-pass" placeholder="Repeat Password" autoComplete="off" />
         </Form.Group>
 
         <Button variant="warning" type="submit">
