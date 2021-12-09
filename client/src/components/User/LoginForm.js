@@ -8,10 +8,14 @@ function LoginForm({ history }) {
     let email = formData.get("email");
     let password = formData.get("password");
 
-    login(email, password).then((res) => {
-      console.log(res);
-      history.push("/catalog");
-    });
+    login(email, password)
+      .then((res) => {
+        console.log(res);
+        history.push("/catalog");
+      })
+      .catch((err) => {
+        window.alert(err.message);
+      });
   }
 
   return (

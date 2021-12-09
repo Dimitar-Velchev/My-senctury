@@ -23,8 +23,10 @@ async function login(email, password) {
   });
 
   let result = await response.json();
-
-  return result;
+  if (result.ok) {
+    return result;
+  }
+  throw result;
 }
 
 export { register, login };
