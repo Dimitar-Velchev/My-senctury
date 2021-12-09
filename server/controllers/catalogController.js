@@ -11,16 +11,15 @@ router.get("/", async (req, res) => {
   res.json(data);
 });
 
-router.post("/",  async (req, res) => {  //isUser(),
-  const data = {
+router.post("/", isUser(), async (req, res) => {    const data = {
     name: req.body.name,
     age: Number(req.body.age),
     gender: req.body.gender,
     img: req.body.img,
     category: req.body.category,
     description: req.body.description,
-    neutered: Boolean(req.body.neutered)
-    // owner: req.user._id,
+    neutered: Boolean(req.body.neutered),
+    owner: req.user._id,
   };
   try {
     const result = await create(data); //, req.user._id

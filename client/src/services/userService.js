@@ -23,7 +23,7 @@ async function login(email, password) {
   });
 
   let result = await response.json();
-  if (result.ok) {
+  if (response.ok) {
     return result;
   }
   throw result;
