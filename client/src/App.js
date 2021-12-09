@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import { useState } from "react";
 
 import { AuthContext } from "./contexts/AuthContext";
 import Header from "./components/Header/Header";
@@ -13,15 +14,26 @@ import PetDetails from "./components/Details/PetDetails";
 import NotFound from "./components/NotFound/NotFound";
 
 function App() {
+  const [user,setUser] = useState({
+    _id: "",
+    email: "",
+    username:"",
+    accessToken:"",
+  });
+
+  const loginUser = (authData) => {
+    setUser(authData)
+  }
+
   return (
-    <AuthContext.Provider value={true}>
+    <AuthContext.Provider value={{user,loginUser}}>
       <div className="App">
-        <Header />
+        <Header/>
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/catalog" exact component={Catalog} />
           <Route path="/catalog/details/:petId" component={PetDetails} />
-          <Route path="/login" component={Login}  />
+          <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
           <Route path="/mypets" component={MyPets} />
           <Route path="/create" component={Create} />

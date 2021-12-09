@@ -1,7 +1,12 @@
 import { Form, Button } from "react-bootstrap";
 import { login } from "../../services/userService";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 
 function LoginForm({ history }) {
+
+  const {loginUser} = useContext(AuthContext);
+
   async function loginHandler(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
@@ -11,6 +16,9 @@ function LoginForm({ history }) {
     login(email, password)
       .then((res) => {
         console.log(res);
+
+        loginUser(res);
+        
         history.push("/catalog");
       })
       .catch((err) => {
