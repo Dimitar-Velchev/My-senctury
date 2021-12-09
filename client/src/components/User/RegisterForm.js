@@ -12,6 +12,9 @@ function RegisterForm({ history }) {
     register(username, email, password).then((res) => {
       console.log(res);
       history.push("/catalog");
+    })
+    .catch((err) => {
+      window.alert(err.message);
     });
   }
 

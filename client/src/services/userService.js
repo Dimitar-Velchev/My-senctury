@@ -10,7 +10,10 @@ async function register(username, email, password) {
   });
 
   let result = await response.json();
-  return result;
+  if (response.ok) {
+    return result;
+  }
+  throw result;
 }
 
 async function login(email, password) {
@@ -23,6 +26,7 @@ async function login(email, password) {
   });
 
   let result = await response.json();
+  
   if (response.ok) {
     return result;
   }
