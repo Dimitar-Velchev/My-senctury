@@ -14,7 +14,7 @@ async function getById(id) {
   // .populate('reviews');
 }
 
-async function create(data) {
+async function create(data, userId) {
   const user = await User.findById(userId);
   const result = new Pet(data);
   await result.save();

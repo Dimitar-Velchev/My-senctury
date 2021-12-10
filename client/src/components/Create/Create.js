@@ -35,7 +35,6 @@ function Create({ history }) {
       })
       .catch((err) => {
         window.alert(err.message);
-        history.push("/login");
       });
 
     e.currentTarget.reset();

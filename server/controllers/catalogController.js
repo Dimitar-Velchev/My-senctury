@@ -23,7 +23,7 @@ router.post("/", isUser(), async (req, res) => {    const data = { //
   };
   console.log(req.body);
   try {
-    const result = await create(data); //, req.user._id
+    const result = await create(data, req.user._id); 
 
     res.status(201).json(result);
   } catch (err) {
