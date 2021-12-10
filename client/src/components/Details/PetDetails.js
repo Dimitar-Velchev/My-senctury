@@ -15,6 +15,13 @@ function Details({ match }) {
     });
   }, [match.params.petId]);
 
+  const ownerBtns = (
+    <>
+      <Button variant="success">Update Info</Button>
+      <Button variant="danger">Delete Pet</Button>
+    </>
+  );
+
   return (
     <Container style={{ minHeight: "90vh" }}>
       <Row>
@@ -40,9 +47,13 @@ function Details({ match }) {
               )}
             </h5>
             <h5>Owner email: {pet.owner?.email} </h5>
-            <Button variant="outline-warning">Ask about me</Button>
-            <Button variant="success">Update Info</Button>
-            <Button variant="danger">Delete Pet</Button>
+
+            {user._id === pet.owner?._id ? (
+              ownerBtns
+            ) : (
+              <Button variant="outline-warning">Ask about me</Button>
+            )}
+
           </div>
         </Col>
       </Row>
