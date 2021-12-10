@@ -22,6 +22,13 @@ function Details({ match }) {
     </>
   );
 
+  const userBtns = (
+    <>
+      <Button variant="outline-warning">Ask about me</Button>
+
+    </>
+  );
+
   return (
     <Container style={{ minHeight: "90vh" }}>
       <Row>
@@ -48,11 +55,11 @@ function Details({ match }) {
             </h5>
             <h5>Owner email: {pet.owner?.email} </h5>
 
-            {user._id === pet.owner?._id ? (
+            {user._id && (user._id === pet.owner?._id ? (
               ownerBtns
             ) : (
-              <Button variant="outline-warning">Ask about me</Button>
-            )}
+              userBtns
+            ))}
 
           </div>
         </Col>

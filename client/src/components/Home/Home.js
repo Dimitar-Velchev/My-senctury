@@ -1,5 +1,7 @@
 import PetCategory from "./PetCategory";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 
 function Home() {
   let [pets] = useState([
@@ -24,6 +26,8 @@ function Home() {
         <span>
           Thank you for your interest in adopting a pet with My Sanctuary! My Sanctuary places thousands of animals in new, loving homes every year, and
           the pets you see here are waiting for their own happy endings.
+         <br /> 
+         Please <NavLink to="/register">register here</NavLink> if you are interested in one of our animals.
         </span>
       </div>
       <div id="content">
