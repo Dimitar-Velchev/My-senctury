@@ -9,17 +9,21 @@ async function getAll(){
 }
 
 
-async function createPet(pet){
+async function createPet(pet, token){
 let response = await fetch(URL, {
     method: 'POST',
     headers:{
         'content-type': 'application/json',
+         'X-Authorization': token,
     },
     body: JSON.stringify(pet)
 });
 
 let result = await response.json();
-return result; 
+if (response.ok) {
+    return result;
+  }
+  throw result;
 }
 
 async function getPetDetails(id){

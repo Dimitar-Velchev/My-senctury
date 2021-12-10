@@ -1,8 +1,12 @@
 import { Form, Button } from "react-bootstrap";
 import "./Create.css";
 import { createPet } from "../../services/petService";
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 
 function Create({ history }) {
+  const { user } = useContext(AuthContext);
+
   function createHandler(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
@@ -13,22 +17,28 @@ function Create({ history }) {
     let gender = formData.get("gender");
     let category = formData.get("category");
     let neutered = Boolean(formData.get("neutered"));
-    
-    
 
-    createPet({
-      name,
-      age,
-      img,
-      description,
-      gender,
-      category,
-      neutered,
-    }).then(result => {
-      history.push("/catalog");
-    });
+    createPet(
+      {
+        name,
+        age,
+        img,
+        description,
+        gender,
+        category,
+        neutered,
+      },
+      user.accessToken
+    )
+      .then((result) => {
+        history.push("/catalog");
+      })
+      .catch((err) => {
+        window.alert(err.message);
+        history.push("/login");
+      });
 
-    e.currentTarget.reset()
+    e.currentTarget.reset();
   }
   return (
     <div className="create-form">

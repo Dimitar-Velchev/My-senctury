@@ -30,7 +30,7 @@ function Details({ match }) {
               <p>{pet.description}</p>
             </h5>
             <h5>
-              Sprayed/Neutered:
+              Sprayed/Neutered:{' '}    
               {pet.neutered ? (
                 <Image src="/images/check-icon.svg" />
               ) : (

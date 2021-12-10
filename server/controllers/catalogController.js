@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   res.json(data);
 });
 
-router.post("/", isUser(), async (req, res) => {    const data = {
+router.post("/", isUser(), async (req, res) => {    const data = { //
     name: req.body.name,
     age: Number(req.body.age),
     gender: req.body.gender,
@@ -19,14 +19,14 @@ router.post("/", isUser(), async (req, res) => {    const data = {
     category: req.body.category,
     description: req.body.description,
     neutered: Boolean(req.body.neutered),
-    owner: req.user._id,
+    owner: req.user?._id,
   };
+  console.log(req.body);
   try {
     const result = await create(data); //, req.user._id
 
     res.status(201).json(result);
   } catch (err) {
-    console.log(req.body);
     const message = parseError(err);
 
     res.status(400).json({ message });
