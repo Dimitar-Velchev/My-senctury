@@ -37,7 +37,7 @@ router.post("/", isUser(), async (req, res) => {    const data = { //
 router.get("/:id", preloader(), async (req, res) => {
   const item = req.data.toObject();
 
-  //item._ownerId = item.owner && item.owner.toString()
+  //item.owner = item.owner && item.owner.toString()
 
   res.json(item);
 });

@@ -10,16 +10,16 @@ async function getAll() {
 }
 
 async function getById(id) {
-  return Pet.findById(id);
+  return Pet.findById(id).populate('owner');
   // .populate('reviews');
 }
 
 async function create(data) {
-  //const user = await User.findById(userId);
+  const user = await User.findById(userId);
   const result = new Pet(data);
   await result.save();
-  //user.offered.push(result);
-  //await user.save();
+  user.offered.push(result);
+  await user.save();
   return result;
 }
 

@@ -1,10 +1,12 @@
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { getPetDetails } from "../../services/petService";
+import { AuthContext } from "../../contexts/AuthContext";
 
 import "./PetDetails.css";
 
 function Details({ match }) {
+  const { user } = useContext(AuthContext);
   const [pet, setPet] = useState({});
 
   useEffect(() => {
@@ -30,14 +32,14 @@ function Details({ match }) {
               <p>{pet.description}</p>
             </h5>
             <h5>
-              Sprayed/Neutered:{' '}    
+              Sprayed/Neutered:{" "}
               {pet.neutered ? (
                 <Image src="/images/check-icon.svg" />
               ) : (
                 <Image src="/images/cancel-icon.svg" />
               )}
             </h5>
-            <h5>Owner email: mxb.kativa@gmail.com </h5>
+            <h5>Owner email: {pet.owner?.email} </h5>
             <Button variant="outline-warning">Ask about me</Button>
             <Button variant="success">Update Info</Button>
             <Button variant="danger">Delete Pet</Button>
