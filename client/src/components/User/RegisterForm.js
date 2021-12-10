@@ -1,7 +1,11 @@
+import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
 import { Form, Button } from "react-bootstrap";
 import { register } from "../../services/userService";
 
 function RegisterForm({ history }) {
+  const { loginUser } = useContext(AuthContext);
+
   function registerHandler(e) {
     e.preventDefault();
     let formData = new FormData(e.currentTarget);
@@ -9,13 +13,14 @@ function RegisterForm({ history }) {
     let email = formData.get("email");
     let password = formData.get("password");
 
-    register(username, email, password).then((res) => {
-      console.log(res);
-      history.push("/catalog");
-    })
-    .catch((err) => {
-      window.alert(err.message);
-    });
+    register(username, email, password)
+      .then((res) => {
+        loginUser(res);
+        history.push("/catalog");
+      })
+      .catch((err) => {
+        window.alert(err.message);
+      });
   }
 
   return (
