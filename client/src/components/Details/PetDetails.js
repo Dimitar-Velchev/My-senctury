@@ -17,7 +17,7 @@ function Details({ match }) {
 
   const ownerBtns = (
     <>
-      <Button variant="success">Update Info</Button>
+      <Button variant="success">Update Info</Button>{' '}
       <Button variant="danger">Delete Pet</Button>
     </>
   );
