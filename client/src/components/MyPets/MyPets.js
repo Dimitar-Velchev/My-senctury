@@ -33,7 +33,7 @@ function MyPets({match}) {
             Number of listings:<span> {user.offered?.length} </span>
           </h5>
           <h5>
-            View listings: {user.offered?.map(pet => <span>{pet.name} </span>)}
+            View listings: {user.offered?.map(pet => <NavLink to={`/catalog/details/${pet._id}`}>{pet.name} </NavLink> )}
           </h5>
         </div>
       </div>

@@ -51,20 +51,20 @@
   justify-content: space-around;
 }
 
-a.active {
+.about-text h5 a {
   text-decoration: none;
-  color: #352b17;
+    color: #eca20f;
   font-family: "Myriad Pro";
   font-size: 24px;
   font-weight: bold;
-  display: inline-block;
+  display:inline;
   line-height: 35px;
-  height: 55px;
+  /* height: 55px; */
   padding: 0 20px 0 20px;
   text-align: center;
-  width: 157px;
+  width: 57px;
 }
 
-a.active:hover {
-  color: #dd8e5a;
+.about-text h5 a:hover {
+  color: #f86e12;
 }
