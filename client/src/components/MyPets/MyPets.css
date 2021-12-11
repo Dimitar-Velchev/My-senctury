@@ -1,0 +1,69 @@
+.about {
+  width: 100%;
+  padding: 80px 0 px;
+  min-height: 90vh;
+  background-color: rgb(59, 57, 54);
+}
+
+.about img {
+  margin-top: 150px;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 320px;
+  height: auto;
+}
+
+.about-text {
+  margin-top: 150px;
+  width: 550px;
+}
+
+.about-text h1 {
+  font-family: "Myriad Pro";
+  color: white;
+  font-size: 80px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+
+.about-text h5 {
+  color: #9c875c;
+  font-family: "Myriad Pro";
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.about-text h5 span {
+    color: #eca20f;
+    font-family: "Myriad Pro";
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+  }
+
+.main {
+  width: 1130px;
+  max-width: 95%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+a.active {
+  text-decoration: none;
+  color: #352b17;
+  font-family: "Myriad Pro";
+  font-size: 24px;
+  font-weight: bold;
+  display: inline-block;
+  line-height: 35px;
+  height: 55px;
+  padding: 0 20px 0 20px;
+  text-align: center;
+  width: 157px;
+}
+
+a.active:hover {
+  color: #dd8e5a;
+}
