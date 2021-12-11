@@ -26,11 +26,17 @@ async function login(email, password) {
   });
 
   let result = await response.json();
-  
+
   if (response.ok) {
     return result;
   }
   throw result;
 }
 
-export { register, login };
+async function getUser(id) {
+  let response = await fetch(`${URL}/profile/${id}`);
+  let result = await response.json();
+  return result;
+}
+
+export { register, login, getUser };

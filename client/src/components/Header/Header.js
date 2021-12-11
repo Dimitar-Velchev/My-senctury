@@ -11,7 +11,7 @@ function Header() {
         <NavLink to="/create">Add Pet</NavLink>
       </li>
       <li>
-        <NavLink to="/mypets">{user.username}'s Pets</NavLink>
+        <NavLink to={`/mypets/${user._id}`}>{user.username}'s Pets</NavLink>
       </li>
       <li>
         <NavLink to="/logout">Logout</NavLink>

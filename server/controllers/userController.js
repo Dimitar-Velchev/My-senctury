@@ -38,10 +38,9 @@ router.get("/logout", (req, res) => {
   res.status(204).end();
 });
 
-router.get("/profile", async (req, res) => {
-  const id = req.user?._id;
+router.get("/profile/:id", async (req, res) => {
   try {
-    const user = await getUserInfo(id); 
+    const user = await getUserInfo(req.params.id); 
     res.status(200).json(user);
   } catch (err) {
     res.status(400).json({ message: err.message });

@@ -24,7 +24,7 @@ async function register(username, email, password) {
 }
 
 async function login(email, password) {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ email }).populate('offered');
     if (!user) {
       throw new Error("Incorrect name or password!");
     }
@@ -61,7 +61,8 @@ function generateToken(user) {
 }
 
 async function getUserInfo(id){
-  const user = await User.findOne({ _id: id });
+  const user = await User.findById(id).populate('offered');;
+  console.log(user)
   return user;
 }
 

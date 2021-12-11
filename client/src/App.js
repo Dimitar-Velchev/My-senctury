@@ -35,7 +35,7 @@ function App() {
           <Route path="/catalog/details/:petId" component={PetDetails} />
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/mypets" component={MyPets} />
+          <Route path="/mypets/:userId" component={MyPets} />
           <Route path="/create" component={Create} />
           <Route path="*" component={NotFound} />
         </Switch>
