@@ -1,4 +1,4 @@
-# My-senctury
+# My-senctuary
 ## Idea
 This is a small app project for browsing, uploading and showing interest in pet adoption. It is SPA build with ReactJS. Data is fetched from a custom local server uploaded here.
 ## Routing 
