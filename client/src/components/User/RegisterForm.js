@@ -1,10 +1,17 @@
 import { AuthContext } from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { register } from "../../services/userService";
+import ServerErrorMsg from '../../common/errorMsgModal';
+
 
 function RegisterForm({ history }) {
   const { loginUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function registerHandler(e) {
     e.preventDefault();
@@ -19,7 +26,8 @@ function RegisterForm({ history }) {
         history.push("/catalog");
       })
       .catch((err) => {
-        window.alert(err.message);
+        setError(err.message);
+        handleShow()
       });
   }
 
@@ -73,6 +81,7 @@ function RegisterForm({ history }) {
           CREATE AND ACCESS
         </Button>
       </Form>
+      {error ? <ServerErrorMsg show={show} error={error} handleClose={handleClose} /> : ""}
     </div>
   );
 }

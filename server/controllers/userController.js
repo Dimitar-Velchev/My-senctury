@@ -13,7 +13,7 @@ router.post("/register", async (req, res) => {
     if (!email) {
       throw new Error("Email is required!");
     }
-    if (password.trim().length < 3) {
+    if (password.trim().length < 4) {
       throw new Error("Password must be at least 4 characters!");
     }
     const userData = await register(username, email, password);

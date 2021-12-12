@@ -1,11 +1,16 @@
-import { Form, Button } from "react-bootstrap";
+import { Form, Button} from "react-bootstrap";
 import { login } from "../../services/userService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import ServerErrorMsg from '../../common/errorMsgModal';
 
 function LoginForm({ history }) {
+  const { loginUser } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [show, setShow] = useState(false);
 
-  const {loginUser} = useContext(AuthContext);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   async function loginHandler(e) {
     e.preventDefault();
@@ -16,13 +21,12 @@ function LoginForm({ history }) {
     login(email, password)
       .then((res) => {
         console.log(res);
-
         loginUser(res);
-        
         history.push("/catalog");
       })
       .catch((err) => {
-        window.alert(err.message);
+        setError(err.message);
+        handleShow();
       });
   }
 
@@ -53,6 +57,7 @@ function LoginForm({ history }) {
           LOGIN
         </Button>
       </Form>
+      {error ? <ServerErrorMsg show={show} error={error} handleClose={handleClose} /> : ""}
     </div>
   );
 }

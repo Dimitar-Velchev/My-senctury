@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
   res.json(data);
 });
 
-router.post("/", isUser(), async (req, res) => {    const data = { //
+router.post("/", isUser(), async (req, res) => {    const data = { 
     name: req.body.name,
     age: Number(req.body.age),
     gender: req.body.gender,
@@ -67,7 +67,7 @@ router.delete("/:id", isUser(), preloader(), isOwner(), async (req, res) => {
 
     res.status(204).json({
       success: true,
-      message: 'Furniture deleted successfully!'
+      message: 'Pet deleted successfully!'
     })
   } catch (err) {
     console.log(err);
