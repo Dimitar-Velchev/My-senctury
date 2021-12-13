@@ -1,11 +1,11 @@
 import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
-import { getPetDetails } from "../../services/petService";
+import { getPetDetails, deletePet } from "../../services/petService";
 import { AuthContext } from "../../contexts/AuthContext";
 
 import "./PetDetails.css";
 
-function Details({ match }) {
+function Details({ match, history }) {
   const { user } = useContext(AuthContext);
   const [pet, setPet] = useState({});
 
@@ -15,17 +15,24 @@ function Details({ match }) {
     });
   }, [match.params.petId]);
 
+  const deleteHandler = () => {
+    deletePet(match.params.petId, user.accessToken).then(() => {
+      history.push("/catalog");
+    });
+  };
+
   const ownerBtns = (
     <>
-      <Button variant="success">Update Info</Button>{' '}
-      <Button variant="danger">Delete Pet</Button>
+      <Button variant="success">Update Info</Button>{" "}
+      <Button variant="danger" onClick={deleteHandler}>
+        Delete Pet
+      </Button>
     </>
   );
 
   const userBtns = (
     <>
       <Button variant="outline-warning">Ask about me</Button>
-
     </>
   );
 
@@ -55,12 +62,7 @@ function Details({ match }) {
             </h5>
             <h5>Owner email: {pet.owner?.email} </h5>
 
-            {user._id && (user._id === pet.owner?._id ? (
-              ownerBtns
-            ) : (
-              userBtns
-            ))}
-
+            {user._id && (user._id === pet.owner?._id ? ownerBtns : userBtns)}
           </div>
         </Col>
       </Row>

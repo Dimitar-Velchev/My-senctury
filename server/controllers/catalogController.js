@@ -21,7 +21,6 @@ router.post("/", isUser(), async (req, res) => {    const data = {
     neutered: Boolean(req.body.neutered),
     owner: req.user?._id,
   };
-  console.log(req.body);
   try {
     const result = await create(data, req.user._id); 
 

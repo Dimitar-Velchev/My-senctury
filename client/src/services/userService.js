@@ -33,10 +33,16 @@ async function login(email, password) {
   throw result;
 }
 
+async function logout(){
+    let response = await fetch(`${URL}/logout`);
+    return response;
+
+    }
+
 async function getUser(id) {
   let response = await fetch(`${URL}/profile/${id}`);
   let result = await response.json();
   return result;
 }
 
-export { register, login, getUser };
+export { register, login, getUser, logout };

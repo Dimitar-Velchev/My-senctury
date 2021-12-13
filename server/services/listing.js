@@ -30,7 +30,7 @@ async function update(original, updated) {
 }
 
 async function remove(id) {
-  return await Listing.findByIdAndDelete(id);
+  return await Pet.findByIdAndDelete(id);
 }
 
 async function book(listingId, userId) {

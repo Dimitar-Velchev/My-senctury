@@ -34,10 +34,11 @@ function Create({ history }) {
         history.push("/catalog");
       })
       .catch((err) => {
-        window.alert(err.message);
-      });
+          history.push("/login");  
+       });
 
     e.currentTarget.reset();
+
   }
   return (
     <div className="create-form">

@@ -1,12 +1,10 @@
 import { Modal } from "react-bootstrap";
 
-
-
 function ServerErrorMsg ({show, error, handleClose }) {
     return(
     <Modal show={show} onHide={handleClose} > 
       <Modal.Header closeButton>
-        <Modal.Title color="red">{error}</Modal.Title>
+        <Modal.Title>{error}</Modal.Title>
       </Modal.Header>
     </Modal>
     )
