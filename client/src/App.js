@@ -9,6 +9,7 @@ import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
 import MyPets from "./components/MyPets/MyPets";
 import Login from "./components/User/Login";
+import Logout from './components/Logout/Logout';
 import Register from "./components/User/Register";
 import PetDetails from "./components/Details/PetDetails";
 import NotFound from "./components/NotFound/NotFound";
@@ -24,9 +25,12 @@ function App() {
   const loginUser = (authData) => {
     setUser(authData)
   }
+  const logoutUser = () => {
+    setUser('');
+};
 
   return (
-    <AuthContext.Provider value={{user,loginUser}}>
+    <AuthContext.Provider value={{user,loginUser, logoutUser}}>
       <div className="App">
         <Header/>
         <Switch>
@@ -34,6 +38,7 @@ function App() {
           <Route path="/catalog" exact component={Catalog} />
           <Route path="/catalog/details/:petId" component={PetDetails} />
           <Route path="/login" component={Login} />
+          <Route path="/logout" component={Logout} />
           <Route path="/register" component={Register} />
           <Route path="/mypets/:userId" component={MyPets} />
           <Route path="/create" component={Create} />

@@ -1,18 +1,9 @@
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
-import {logout} from '../../services/userService';
 
-function Header({history}) {
-  const {user, setUser} = useContext(AuthContext);
-
-  const logoutHandler = () => {
-    logout()
-    .then(() => {
-            setUser(null);
-            history.push('/');
-        })
-}
+function Header() {
+  const {user} = useContext(AuthContext);
 
   const userNav = (
     <>
@@ -23,7 +14,7 @@ function Header({history}) {
         <NavLink to={`/mypets/${user._id}`}>{user.username}'s Pets</NavLink>
       </li>
       <li>
-        <NavLink to="/logout" onClick={logoutHandler}>Logout</NavLink>
+        <NavLink to="/logout">Logout</NavLink>
       </li>
     </>
   );

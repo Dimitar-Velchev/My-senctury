@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { getPetDetails, deletePet } from "../../services/petService";
 import { AuthContext } from "../../contexts/AuthContext";
 
+
 import "./PetDetails.css";
 
 function Details({ match, history }) {

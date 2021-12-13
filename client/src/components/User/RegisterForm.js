@@ -2,7 +2,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { register } from "../../services/userService";
-import ServerErrorMsg from '../../common/errorMsgModal';
+import ServerErrorMsg from '../../common/ServerErrorMsg';
 
 
 function RegisterForm({ history }) {

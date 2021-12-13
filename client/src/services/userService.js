@@ -33,11 +33,15 @@ async function login(email, password) {
   throw result;
 }
 
-async function logout(){
-    let response = await fetch(`${URL}/logout`);
-    return response;
+async function logout(token) {
+  let response = await fetch(`${URL}/logout`, {
+    headers: {
+      "X-Authorization": token,
+    },
+  });
 
-    }
+  return response;
+}
 
 async function getUser(id) {
   let response = await fetch(`${URL}/profile/${id}`);
