@@ -4,16 +4,8 @@ import { Form, Button } from "react-bootstrap";
 import { signup } from "../../services/userService";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
 import ServerErrorMsg from '../../common/ServerErrorMsg';
-
-const registerSchema = yup.object().shape({
-  username: yup.string().required('Username is required'),
-  email: yup.string().email().required('Please enter a valid email'),
-  password: yup.string().min(4).max(12).required('Password must be between 4 and 12 characters'),
-  rePass: yup.string().oneOf([yup.ref('password'), null]),
-
-})
+import registerSchema from '../../common/registerValidation';
 
 
 function RegisterForm({ history }) {
@@ -57,9 +49,9 @@ function RegisterForm({ history }) {
             name="username"
             placeholder="Enter username"
             {...register('username')}
-          />
+            />
+            <span>{errors?.username?.message}</span>
         </Form.Group>
-        <span>{errors?.username?.message}</span>
 
         <Form.Group className="mb-3">
           <Form.Label>Email address</Form.Label>
