@@ -5,6 +5,8 @@ This is a small app project for browsing, uploading and showing interest in pet 
 React Router v5 is used for implementing client side routes.
 ## Design 
 React Bootstrap as well as some custom CSS is used for styling the components. There is a global file in the public folder as well as most of the components have their own local CSS file. 
+## Form Validation
+The forms are validated on the client with the help of react-hook-form and yup. There is also some API errors shown in a modal when the response in not ok. 
 ## Public Part
 Home page, catalog browsing and the options to register/login are visible without authentication. The navigation changes once we login showing the rest of the options. There is validation on the forms showing both front end errors as well as server errors.
 ## Private Part 
