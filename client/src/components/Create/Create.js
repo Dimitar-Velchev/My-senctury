@@ -2,10 +2,17 @@ import { Form, Button } from "react-bootstrap";
 import "./Create.css";
 import { createPet } from "../../services/petService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import ServerErrorMsg from '../../common/ServerErrorMsg';
+
 
 function Create({ history }) {
   const { user } = useContext(AuthContext);
+  const [error, setError] = useState("");
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   function createHandler(e) {
     e.preventDefault();
@@ -34,7 +41,8 @@ function Create({ history }) {
         history.push("/catalog");
       })
       .catch((err) => {
-          history.push("/login");  
+        setError(err.message);
+        handleShow() 
        });
 
     e.currentTarget.reset();
@@ -92,6 +100,7 @@ function Create({ history }) {
           ADD A PET FOR ADOPTION
         </Button>
       </Form>
+      {error ? <ServerErrorMsg show={show} error={error} handleClose={handleClose} /> : ""}
     </div>
   );
 }

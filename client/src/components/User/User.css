@@ -9,3 +9,7 @@ form{
     width: 80%;
     margin: 30% 20%;
 }
+
+form span{
+    color: red;
+}

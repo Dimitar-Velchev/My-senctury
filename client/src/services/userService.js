@@ -1,6 +1,6 @@
 const URL = "http://localhost:5000/user";
 
-async function register(username, email, password) {
+async function signup(username, email, password) {
   let response = await fetch(`${URL}/register`, {
     method: "POST",
     headers: {
@@ -49,4 +49,4 @@ async function getUser(id) {
   return result;
 }
 
-export { register, login, getUser, logout };
+export { signup, login, getUser, logout };

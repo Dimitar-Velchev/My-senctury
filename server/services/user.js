@@ -13,45 +13,45 @@ async function register(username, email, password) {
   const user = new User({ username, email, hashedPassword });
   await user.save();
 
-  return{
-      _id: user._id,
-      username: user.username,
-      email: user.email,
-      accessToken: generateToken(user),
-      offered: user.offered,
-      // booked: user.booked,
+  return {
+    _id: user._id,
+    username: user.username,
+    email: user.email,
+    accessToken: generateToken(user),
+    offered: user.offered,
+    // booked: user.booked,
   };
 }
 
 async function login(email, password) {
-    const user = await User.findOne({ email }).populate('offered');
-    if (!user) {
-      throw new Error("Incorrect name or password!");
-    }
-  
-    const match = await bcrypt.compare(password, user.hashedPassword);
-
-    if(!match){
-      throw new Error("Incorrect name or password!");
-    }
-    
-    return{
-        _id: user._id,
-        username: user.username,
-        email: user.email,
-        accessToken: generateToken(user),
-        offered: user.offered,
-        // booked: user.booked,
-    };
+  const user = await User.findOne({ email }).populate("offered");
+  if (!user) {
+    throw new Error("Incorrect name or password!");
   }
-  
+
+  const match = await bcrypt.compare(password, user.hashedPassword);
+
+  if (!match) {
+    throw new Error("Incorrect name or password!");
+  }
+
+  return {
+    _id: user._id,
+    username: user.username,
+    email: user.email,
+    accessToken: generateToken(user),
+    offered: user.offered,
+    // booked: user.booked,
+  };
+}
+
 function generateToken(user) {
   const token = jwt.sign(
     {
       _id: user._id,
       username: user.username,
       email: user.email,
-      offered: user.offered
+      offered: user.offered,
       // booked: user.booked,
     },
     TOKEN_SECRET
@@ -60,17 +60,14 @@ function generateToken(user) {
   return token;
 }
 
-async function getUserInfo(id){
-  const user = await User.findById(id).populate('offered');;
-  console.log(user)
+async function getUserInfo(id) {
+  const user = await User.findById(id).populate("offered");
+  console.log(user);
   return user;
 }
-
-
-
 
 module.exports = {
   register,
   login,
-  getUserInfo
+  getUserInfo,
 };
