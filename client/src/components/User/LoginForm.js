@@ -20,7 +20,6 @@ function LoginForm({ history }) {
 
     login(email, password)
       .then((res) => {
-        console.log(res);
         loginUser(res);
         history.push("/catalog");
       })
