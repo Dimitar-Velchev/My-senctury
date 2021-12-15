@@ -2,6 +2,8 @@ import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
 import { getPetDetails, deletePet } from "../../services/petService";
 import { AuthContext } from "../../contexts/AuthContext";
+import { Link } from "react-router-dom";
+
 
 
 import "./PetDetails.css";
@@ -24,7 +26,7 @@ function Details({ match, history }) {
 
   const ownerBtns = (
     <>
-      <Button variant="success">Update Info</Button>{" "}
+      <Link to={`/edit/${pet._id}`}><Button variant="success">Update Info</Button></Link>{" "}
       <Button variant="danger" onClick={deleteHandler}>
         Delete Pet
       </Button>

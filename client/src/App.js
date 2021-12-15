@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Catalog from "./components/Catalog/Catalog";
 import Create from "./components/Create/Create";
+import Edit from "./components/Edit/Edit";
 import MyPets from "./components/MyPets/MyPets";
 import Login from "./components/User/Login";
 import Logout from './components/Logout/Logout';
@@ -42,6 +43,7 @@ function App() {
           <Route path="/register" component={Register} />
           <Route path="/mypets/:userId" component={MyPets} />
           <Route path="/create" component={Create} />
+          <Route path="/edit/:petId" component={Edit} />
           <Route path="*" component={NotFound} />
         </Switch>
         <Footer />

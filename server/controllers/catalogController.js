@@ -43,12 +43,14 @@ router.get("/:id", preloader(), async (req, res) => {
 
 router.put("/:id", isUser(), preloader(), isOwner(), async (req, res) => {
   const updated = {
-    title: req.body.title,
-    location: req.body.location,
+    name: req.body.name,
+    age: Number(req.body.age),
+    gender: req.body.gender,
     img: req.body.img,
-    price: Number(req.body.price),
     category: req.body.category,
     description: req.body.description,
+    neutered: Boolean(req.body.neutered),
+    owner: req.user?._id,
   };
   try {
     const result = await update(req.data, updated);

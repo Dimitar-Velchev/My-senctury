@@ -41,4 +41,27 @@ async function deletePet(id, token) {
   return response;
 }
 
-export { getAll, createPet, getPetDetails, deletePet };
+async function updatePet(pet, token, id) {
+  let response = await fetch(`${URL}/${id}`, {
+    method: "PUT",
+    headers: {
+      "content-type": "application/json",
+      "X-Authorization": token,
+    },
+    body: JSON.stringify(pet),
+  });
+
+  let result = await response.json();
+  if (response.ok) {
+    return result;
+  }
+  throw result;
+}
+
+export { 
+  getAll, 
+  createPet, 
+  getPetDetails, 
+  deletePet, 
+  updatePet 
+};
