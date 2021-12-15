@@ -32,7 +32,11 @@ function Edit({ history, match }) {
       setPet(result);
       reset(result.data);
     });
-  }, [match.params.petId]);
+  }, [match.params.petId, reset]);
+
+  if (!user.username) {
+    history.push("/login");
+  }
 
   function editHandler(data) {
 
@@ -61,10 +65,7 @@ function Edit({ history, match }) {
       });
   }
 
-  const changeCategory = (e) =>{
-      setPet(s => ({...s, category: e.target.value}));
-      console.log(pet)
-  }
+ 
   return (
     <div className="edit-form">
       <Form method="POST" onSubmit={handleSubmit(editHandler)} noValidate>
@@ -117,12 +118,10 @@ function Edit({ history, match }) {
         <Form.Select
           aria-label="Default select example"
           name="gender"
-        // value={pet.gender}
           defaultValue={pet.gender}
-          onChange={(e) => setPet(s => ({...s, gender: e.target.value}))}
           {...register("gender")}
         >
-          <option value='select'>Please select a gender category</option>
+          <option value='select' disabled>Please select a gender category</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
         </Form.Select>
@@ -132,12 +131,10 @@ function Edit({ history, match }) {
         <Form.Select
           aria-label="Default select example"
           name="category"
-         //value={pet.category}
          defaultValue={pet.category}
-          onChange={changeCategory}
          {...register("category")}
         >
-          <option value='select'>Please select a pet category</option>
+          <option value='select' disabled>Please select a pet category</option>
           <option value="cat">Cat</option>
           <option value="dog">Dog</option>
         </Form.Select>

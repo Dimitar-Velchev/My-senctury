@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import ServerErrorMsg from "../../common/ServerErrorMsg";
 import createFormSchema from "../../common/createFormValidation";
+// import { Redirect } from "react-router-dom";
 
 function Create({ history }) {
   const [error, setError] = useState("");
@@ -23,8 +24,12 @@ function Create({ history }) {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  if (!user.username) {
+    history.push("/login");
+  }
+
   function createHandler(data) {
-    console.log(data)
+    console.log(data);
     const { name, age, img, description, gender, category, neutered } = data;
 
     createPet(

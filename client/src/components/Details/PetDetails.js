@@ -2,15 +2,16 @@ import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
 import { getPetDetails, deletePet } from "../../services/petService";
 import { AuthContext } from "../../contexts/AuthContext";
+
 import { Link } from "react-router-dom";
 
-
-
 import "./PetDetails.css";
+import QuestionBox from './QuestionBox';
 
 function Details({ match, history }) {
   const { user } = useContext(AuthContext);
   const [pet, setPet] = useState({});
+  const [showQuestBox, setQuestBox] = useState(false);
 
   useEffect(() => {
     getPetDetails(match.params.petId).then((result) => {
@@ -26,7 +27,9 @@ function Details({ match, history }) {
 
   const ownerBtns = (
     <>
-      <Link to={`/edit/${pet._id}`}><Button variant="success">Update Info</Button></Link>{" "}
+      <Link to={`/edit/${pet._id}`}>
+        <Button variant="success">Update Info</Button>
+      </Link>{" "}
       <Button variant="danger" onClick={deleteHandler}>
         Delete Pet
       </Button>
@@ -35,7 +38,8 @@ function Details({ match, history }) {
 
   const userBtns = (
     <>
-      <Button variant="outline-warning">Ask about me</Button>
+      <Button style={{marginBottom: '10px'}} variant="outline-warning" onClick={() => setQuestBox(true)}>Ask about me</Button>
+       {showQuestBox && <QuestionBox pet={pet} setQuestBox={setQuestBox}/>}
     </>
   );
 

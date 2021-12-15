@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, } from "react-router-dom";
 import { useState } from "react";
 
 import { AuthContext } from "./contexts/AuthContext";
@@ -10,30 +10,30 @@ import Create from "./components/Create/Create";
 import Edit from "./components/Edit/Edit";
 import MyPets from "./components/MyPets/MyPets";
 import Login from "./components/User/Login";
-import Logout from './components/Logout/Logout';
+import Logout from "./components/Logout/Logout";
 import Register from "./components/User/Register";
 import PetDetails from "./components/Details/PetDetails";
 import NotFound from "./components/NotFound/NotFound";
 
 function App() {
-  const [user,setUser] = useState({
+  const [user, setUser] = useState({
     _id: "",
     email: "",
-    username:"",
-    accessToken:"",
+    username: "",
+    accessToken: "",
   });
 
   const loginUser = (authData) => {
-    setUser(authData)
-  }
+    setUser(authData);
+  };
   const logoutUser = () => {
-    setUser('');
-};
+    setUser("");
+  };
 
   return (
-    <AuthContext.Provider value={{user,loginUser, logoutUser}}>
+    <AuthContext.Provider value={{ user, loginUser, logoutUser }}>
       <div className="App">
-        <Header/>
+        <Header />
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/catalog" exact component={Catalog} />
