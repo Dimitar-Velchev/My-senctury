@@ -12,7 +12,7 @@ const Logout = ({history}) => {
                 logoutUser();
                 history.push('/');
             })
-    }, [])
+    }, [user,logoutUser,history])
 
     return null;
 };
