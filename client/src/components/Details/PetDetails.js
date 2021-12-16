@@ -2,11 +2,12 @@ import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
 import { getPetDetails, deletePet } from "../../services/petService";
 import { AuthContext } from "../../contexts/AuthContext";
-
 import { Link } from "react-router-dom";
 
 import "./PetDetails.css";
-import QuestionBox from './QuestionBox';
+// import starEmpty from './images/star.svg'
+// import starFull from './images/star-full.svg'
+import QuestionBox from "./QuestionBox";
 
 function Details({ match, history }) {
   const { user } = useContext(AuthContext);
@@ -25,6 +26,22 @@ function Details({ match, history }) {
     });
   };
 
+  const getStars = () => {
+    const stars = [];
+    let popular = pet.interested?.length;
+    if (popular > 5) {
+      popular = 5;
+    }
+    for (let i = 1; i <= 5; i++) {
+      if (i <= popular) {
+        stars.push(<Image alt="star" style={{color:'red'}} src='/images/star-fill.svg' />);
+      } else {
+        stars.push(<Image alt="star" src='/images/star.svg' />);
+      }
+    }
+    return stars;
+  };
+
   const ownerBtns = (
     <>
       <Link to={`/edit/${pet._id}`}>
@@ -38,8 +55,16 @@ function Details({ match, history }) {
 
   const userBtns = (
     <>
-      <Button style={{marginBottom: '10px'}} variant="outline-warning" onClick={() => setQuestBox(true)}>Ask about me</Button>
-       {showQuestBox && <QuestionBox pet={pet} setQuestBox={setQuestBox} history={history}/>}
+      <Button
+        style={{ marginBottom: "10px" }}
+        variant="outline-warning"
+        onClick={() => setQuestBox(true)}
+      >
+        Ask about me
+      </Button>
+      {showQuestBox && (
+        <QuestionBox pet={pet} setQuestBox={setQuestBox} history={history} />
+      )}
     </>
   );
 
@@ -68,6 +93,7 @@ function Details({ match, history }) {
               )}
             </h5>
             <h5>Owner email: {pet.owner?.email} </h5>
+            <h5>How popular am I? {getStars()} </h5>
 
             {user._id && (user._id === pet.owner?._id ? ownerBtns : userBtns)}
           </div>
