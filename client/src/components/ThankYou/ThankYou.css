@@ -1,0 +1,9 @@
+.thx-p{
+    min-height: 85vh;
+    /* height: 200px; */
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}

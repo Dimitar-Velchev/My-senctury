@@ -1,12 +1,13 @@
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useState, useEffect, useContext } from "react";
+import { Redirect } from "react-router-dom";
+import { useState, useEffect, useContext, } from "react";
+import {showInterest} from '../../services/petService';
 import "./PetDetails.css";
 
 
-function QuestionBox({ pet, setQuestBox }) {
+function QuestionBox({ pet, setQuestBox, history }) {
   const { user } = useContext(AuthContext);
-
   const cancelHandler = (e) => {
     e.preventDefault();
     setQuestBox(false);
@@ -14,6 +15,9 @@ function QuestionBox({ pet, setQuestBox }) {
 
   const confirmHandler = (e) => {
     e.preventDefault();
+    showInterest(pet._id,user.accessToken).then((res)=> {
+        history.push(`/catalog/details/${pet._id}/thanks`)
+      })
   };
 
   return (
@@ -25,10 +29,10 @@ function QuestionBox({ pet, setQuestBox }) {
         </p>
         <Row>
           <Col>
-            <Form.Control type="text" defaultValue={user.username} />
+            <Form.Control type="text" placeholder='Username' defaultValue={user.username} />
           </Col>
           <Col>
-            <Form.Control type="email" defaultValue={user.email} />
+            <Form.Control type="email" placeholder='Email address' defaultValue={user.email} />
           </Col>
         </Row>
         <Button variant="success" type="submit" onClick={confirmHandler}>

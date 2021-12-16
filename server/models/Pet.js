@@ -13,7 +13,7 @@ const schema = new Schema({
   },
   neutered: {type:Boolean, required: true },
   owner: { type: Schema.Types.ObjectId, ref: "User" },
-  // reviews: [{type: Schema.Types.ObjectId, ref: "Review" }]
+  interested: [{type: Schema.Types.ObjectId, ref: "User", default: []}],
 });
 
 module.exports = model("Pet", schema);

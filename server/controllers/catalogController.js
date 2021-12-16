@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { parseError } = require("../middlewares/util");
 const { isUser, isOwner } = require("../middlewares/guards");
 const preloader = require("../middlewares/preloader");
-const { getAll, create, update, remove, book, postReview, getReviews } = require("../services/listing");
+const { getAll, create, update, remove, book, showInterest  } = require("../services/listing");
 const Pet = require("../models/Pet");
 
 router.get("/", async (req, res) => {
@@ -76,9 +76,9 @@ router.delete("/:id", isUser(), preloader(), isOwner(), async (req, res) => {
   }
 });
 
-router.get("/book/:id", isUser(), async (req, res) => {
+router.get("/:id/interested", isUser(), async (req, res) => {
   try {
-    const result = await book(req.params.id, req.user._id);
+    const result = await showInterest(req.params.id, req.user?._id);
     res.status(200).json(result);
   } catch (err) {
     console.log(err.message);

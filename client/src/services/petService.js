@@ -58,10 +58,28 @@ async function updatePet(pet, token, id) {
   throw result;
 }
 
+
+async function showInterest(id, token){
+ const response = await fetch(`${URL}/${id}/interested`, {
+  method: "GET",
+  headers: {
+    "content-type": "application/json",
+    "X-Authorization": token,
+  }
+  })
+ let result = await response.json();
+ if (response.ok) {
+  return result;
+}
+throw result;
+}
+
+
 export { 
   getAll, 
   createPet, 
   getPetDetails, 
   deletePet, 
-  updatePet 
+  updatePet,
+  showInterest 
 };

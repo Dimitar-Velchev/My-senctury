@@ -39,6 +39,12 @@ async function book(listingId, userId) {
   return user.save();
 }
 
+async function showInterest(listingId, userId) {
+  const listing = await Pet.findById(listingId);
+  listing.interested.push(userId);
+  return listing.save();
+}
+
 async function postReview(id, review){
 const listing = await Listing.findById(id);
  const newReview = new Review(review);
@@ -61,6 +67,7 @@ module.exports = {
   update,
   remove,
   book,
+  showInterest,
   postReview,
   getReviews
 };

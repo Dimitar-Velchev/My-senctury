@@ -39,7 +39,7 @@ function Details({ match, history }) {
   const userBtns = (
     <>
       <Button style={{marginBottom: '10px'}} variant="outline-warning" onClick={() => setQuestBox(true)}>Ask about me</Button>
-       {showQuestBox && <QuestionBox pet={pet} setQuestBox={setQuestBox}/>}
+       {showQuestBox && <QuestionBox pet={pet} setQuestBox={setQuestBox} history={history}/>}
     </>
   );
 
