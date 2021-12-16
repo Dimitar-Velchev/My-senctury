@@ -5,20 +5,26 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { Link } from "react-router-dom";
 
 import "./PetDetails.css";
-// import starEmpty from './images/star.svg'
-// import starFull from './images/star-full.svg'
+
 import QuestionBox from "./QuestionBox";
+import ConfirmDelete from '../../common/ConfirmDelete';
 
 function Details({ match, history }) {
   const { user } = useContext(AuthContext);
   const [pet, setPet] = useState({});
   const [showQuestBox, setQuestBox] = useState(false);
+  const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
   useEffect(() => {
     getPetDetails(match.params.petId).then((result) => {
       setPet(result);
     });
   }, [match.params.petId]);
+
+  const deleteClickHandler = (e) => {
+    e.preventDefault();
+    setShowDeleteDialog(true);
+}
 
   const deleteHandler = () => {
     deletePet(match.params.petId, user.accessToken).then(() => {
@@ -47,7 +53,7 @@ function Details({ match, history }) {
       <Link to={`/edit/${pet._id}`}>
         <Button variant="success">Update Info</Button>
       </Link>{" "}
-      <Button variant="danger" onClick={deleteHandler}>
+      <Button variant="danger" onClick={deleteClickHandler}>
         Delete Pet
       </Button>
     </>
@@ -69,6 +75,8 @@ function Details({ match, history }) {
   );
 
   return (
+    <>
+    <ConfirmDelete show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onSave={deleteHandler} />
     <Container style={{ minHeight: "90vh" }}>
       <Row>
         <Col>
@@ -100,6 +108,7 @@ function Details({ match, history }) {
         </Col>
       </Row>
     </Container>
+    </>
   );
 }
 
