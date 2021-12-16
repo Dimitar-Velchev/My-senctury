@@ -13,7 +13,7 @@ const ConfirmDelete = ({
 
             <Modal.Footer>
                 <Button variant="secondary" onClick={onClose}>Cancel</Button>
-                <Button variant="primary" onClick={onSave}>Delete Pet</Button>
+                <Button variant="danger" onClick={onSave}>Delete Pet</Button>
             </Modal.Footer>
         </Modal>
     );
