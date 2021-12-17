@@ -1,6 +1,7 @@
-import PetCategory from "./PetCategory";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+
+import PetCategory from "./PetCategory";
 
 
 function Home() {

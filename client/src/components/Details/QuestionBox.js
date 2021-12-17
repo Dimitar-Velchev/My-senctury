@@ -1,7 +1,9 @@
-import { Form, Row, Col, Button } from "react-bootstrap";
-import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
+import { Form, Row, Col, Button } from "react-bootstrap";
+
+import { AuthContext } from "../../contexts/AuthContext";
 import {showInterest} from '../../services/petService';
+
 import "./PetDetails.css";
 
 

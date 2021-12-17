@@ -1,13 +1,14 @@
-import { Form, Button } from "react-bootstrap";
-import "./Create.css";
-import { createPet } from "../../services/petService";
-import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
+import { Form, Button } from "react-bootstrap";
+
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { createPet } from "../../services/petService";
+import { AuthContext } from "../../contexts/AuthContext";
+
 import ServerErrorMsg from "../../common/ServerErrorMsg";
 import createFormSchema from "../../common/createFormValidation";
-// import { Redirect } from "react-router-dom";
+import "./Create.css";
 
 function Create({ history }) {
   const [error, setError] = useState("");

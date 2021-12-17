@@ -1,5 +1,5 @@
-import { Card, Button, Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { Card, Button, Image } from "react-bootstrap";
 
 function PetCard({pet}) {
   return (
@@ -8,9 +8,9 @@ function PetCard({pet}) {
       <Card.Body>
         <Card.Title>{pet.name}</Card.Title>
         <Card.Text>
-          <Image src="./images/hourglass-icon.svg" roundedCircle />
+          <Image src="/images/hourglass-icon.svg" roundedCircle />
           Age: {pet.age} <br />
-          <Image src="./images/gender-icon.svg" roundedCircle /> Gender: {pet.gender}
+          <Image src="/images/gender-icon.svg" roundedCircle /> Gender: {pet.gender}
         </Card.Text>
         <Link to={`/catalog/details/${pet._id}`}>
           <Button variant="warning">Learn more about me</Button>

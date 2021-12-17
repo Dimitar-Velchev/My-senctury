@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Spinner } from "react-bootstrap";
 
-import PetCard from "./PetCard";
 import { getAll } from "../../services/petService";
+
+import PetCard from "./PetCard";
 import "./Catalog.css";
 
 function Catalog({match}) {

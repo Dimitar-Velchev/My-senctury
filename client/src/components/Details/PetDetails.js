@@ -1,13 +1,14 @@
-import { Container, Row, Col, Image, Button } from "react-bootstrap";
 import { useState, useEffect, useContext } from "react";
+import { Link } from "react-router-dom";
+import { Container, Row, Col, Image, Button } from "react-bootstrap";
+
 import { getPetDetails, deletePet } from "../../services/petService";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Link } from "react-router-dom";
-
-import "./PetDetails.css";
+import ConfirmDelete from '../../common/ConfirmDelete';
 
 import QuestionBox from "./QuestionBox";
-import ConfirmDelete from '../../common/ConfirmDelete';
+import "./PetDetails.css";
+
 
 function Details({ match, history }) {
   const { user } = useContext(AuthContext);

@@ -1,5 +1,5 @@
-import { Route, Switch, } from "react-router-dom";
 import { useState } from "react";
+import { Route, Switch, } from "react-router-dom";
 import { AuthContext } from "./contexts/AuthContext";
 
 import Header from "./components/Header/Header";

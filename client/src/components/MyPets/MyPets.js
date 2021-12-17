@@ -1,7 +1,9 @@
-import "./MyPets.css";
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+
 import { getUser } from "../../services/userService";
+
+import "./MyPets.css";
 
 function MyPets({match}) {
     const [user, setUser] = useState({});

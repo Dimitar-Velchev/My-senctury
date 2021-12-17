@@ -1,12 +1,12 @@
-import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
 import { Form, Button } from "react-bootstrap";
-import { signup } from "../../services/userService";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+
+import { AuthContext } from "../../contexts/AuthContext";
+import { signup } from "../../services/userService";
 import ServerErrorMsg from '../../common/ServerErrorMsg';
 import registerSchema from '../../common/registerValidation';
-
 
 function RegisterForm({ history }) {
   const { loginUser } = useContext(AuthContext);
