@@ -40,9 +40,9 @@ function Details({ match, history }) {
     }
     for (let i = 1; i <= 5; i++) {
       if (i <= popular) {
-        stars.push(<Image alt="star" style={{color:'red'}} src='/images/star-fill.svg' />);
+        stars.push(<Image alt="star" key={i} style={{color:'red'}} src='/images/star-fill.svg' />);
       } else {
-        stars.push(<Image alt="star" src='/images/star.svg' />);
+        stars.push(<Image alt="star" key={i} src='/images/star.svg' />);
       }
     }
     return stars;

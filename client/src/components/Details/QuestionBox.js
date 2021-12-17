@@ -1,7 +1,6 @@
 import { Form, Row, Col, Button } from "react-bootstrap";
 import { AuthContext } from "../../contexts/AuthContext";
-import { Redirect } from "react-router-dom";
-import { useState, useEffect, useContext, } from "react";
+import { useContext } from "react";
 import {showInterest} from '../../services/petService';
 import "./PetDetails.css";
 

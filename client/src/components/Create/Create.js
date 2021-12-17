@@ -29,7 +29,6 @@ function Create({ history }) {
   }
 
   function createHandler(data) {
-    console.log(data);
     const { name, age, img, description, gender, category, neutered } = data;
 
     createPet(

@@ -41,8 +41,6 @@ function Edit({ history, match }) {
   function editHandler(data) {
 
     const { name, age, img, description, gender, category, neutered } = data;
-    console.log(gender)
-    console.log(category)
     updatePet(
       {
         name,
