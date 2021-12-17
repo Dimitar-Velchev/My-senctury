@@ -7,12 +7,14 @@ function Home() {
   let [pets] = useState([
     {
       id: 0,
+      category: 'dogs',
       src: "images/puppy.jpg",
       title: "Meet Our Friendly Dogs",
       text: "Meet our rescue dogs and puppies looking for a forever home. Find your perfect pet with us and adopt today.",
     },
     {
       id: 1,
+      category: 'cats',
       src: "images/cat.jpg",
       title: "Fall in Love with Our Cats and Kittens",
       text: "If a cat is the new friend you have been looking for, look no further. From babies to elderlies our cat are all waiting for their new home. ",

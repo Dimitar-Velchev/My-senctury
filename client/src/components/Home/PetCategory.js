@@ -8,8 +8,8 @@ function PetCategory({ pet }) {
       <h2>{pet.title}</h2>
       <p>
         {pet.text}
-        <NavLink className="more" to="/catalog">
-          View all
+        <NavLink className="more" to={`/catalog/${pet.category}`}>
+          View all 
         </NavLink>
       </p>
     </li>
